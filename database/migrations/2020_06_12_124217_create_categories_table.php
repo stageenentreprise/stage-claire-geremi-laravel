@@ -18,8 +18,8 @@ class CreateCategoriesTable extends Migration
             $table->timestamps();
             $table->string('name');
             $table->string('slug')->unique();
-            $table->bigInteger('id_category');
-            $table->foreign('id_category')
+            $table->bigInteger('category_id');
+            $table->foreign('category_id')
                 ->references('id')
                 ->on('categories');
         });
