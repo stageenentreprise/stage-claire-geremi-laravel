@@ -24,3 +24,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/course/create', 'CourseController@create')->name('create_course');
