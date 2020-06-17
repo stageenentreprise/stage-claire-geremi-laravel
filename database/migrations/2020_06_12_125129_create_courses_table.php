@@ -26,7 +26,7 @@ class CreateCoursesTable extends Migration
             $table->foreign('category_id')
                 ->references('id')
                 ->on('categories');
-            $table->string('description');
+            $table->text('description');
         });
     }
 

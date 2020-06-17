@@ -26,8 +26,17 @@ class CourseRequest extends FormRequest
     {
         return [
             'title' => 'required | max:128 | min:6',
-            'categories' => 'required',
-            'text' => 'required',
+            'category_id' => 'required',
+            'description' => 'required',
+        ];
+    }
+    public function messages() {
+        return [
+            'title.required' => 'veuillez saisir le titre.',
+            'title.max' => 'Le titre doit composer entre 6 et 128 caractères',
+            'title.min' => 'Le titre doit composer entre 6 et 128 caractères',
+            'category_id.required' => 'Veuillez spécifier les catégories de la formation.',
+            'description.required' => 'Veuillez saisir un texte.',
         ];
     }
 }
