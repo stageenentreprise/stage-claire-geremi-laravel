@@ -17,7 +17,7 @@
     </div>
 
     <div class="form-group">
-      <label for="exampleFormControlSelect1">Catégory</label>
+      <label for="exampleFormControlSelect1">Catégorie</label>
       <select class="form-control" id="exampleFormControlSelect1" name="category_id">
         <option>1</option>
         <option>2</option>

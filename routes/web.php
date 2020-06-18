@@ -34,5 +34,5 @@ Route::post('/category/insert', 'CategoryController@insert')->name('insert_categ
 Route::get('/course/create', 'CourseController@create')->name('create_course');
 Route::post('/course/insert', 'CourseController@insert')->name('insert_course');
 
-Route::get('/part/create', 'PartController@create')->name('create_part');
-Route::post('/part/insert', 'PartController@insert')->name('insert_part');
+Route::get('/part/{course}/create', 'PartController@create')->name('create_part');
+Route::post('/part/{course}/insert', 'PartController@insert')->name('insert_part');

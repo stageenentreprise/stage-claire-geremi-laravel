@@ -3,14 +3,20 @@
 
 @section('content')
 
-<form action="{{ url('/course/insert') }}" method="post">
+
+   @foreach ($errors->all() as $error)
+      <div>{{ $error }}</div>
+  @endforeach
+
+
+<form action="{{ url('/part/insert') }}" method="post">
 
     @csrf
 
 
     <div class="form-group">
-        <label for="exampleFormControlInput1">Titre de la partie</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" name="title" value="{{ old('title') }}" placeholder="Une superbe partie !" required>
+        <label for="exampleFormControlInput1">Nom de la partie</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" name="name" value="{{ old('title') }}" placeholder="Une superbe partie !" required>
         @error('title')
             {{ $message }}
         @enderror
@@ -18,7 +24,7 @@
 
     <div class="form-group">
       <label for="exampleFormControlInput1">numéro de la partie</label>
-      <input type="text" class="form-control" id="exampleFormControlInput1" name="part_id" value="{{ old('part_id') }}" placeholder="Numéro de la partie" required>
+      <input type="text" class="form-control" id="exampleFormControlInput1" name="id" value="{{ old('part_id') }}" placeholder="Numéro de la partie" required>
       @error('part_id')
           {{ $message }}
       @enderror
