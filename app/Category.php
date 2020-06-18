@@ -9,4 +9,9 @@ class Category extends Model
     protected $fillable = [
         'name','slug','category_id'
     ];
+
+    public function children()
+    {
+        return $this->hasMany('App\Category');
+    }
 }
