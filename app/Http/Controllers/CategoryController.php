@@ -10,7 +10,8 @@ class CategoryController extends Controller
 {
     public function create()
     {
-        return view("categories.create");
+        $categories = Category::whereNull("category_id")->orderBy('name')->get();
+        return view("categories.create")->withCategories($categories);
     }
     public function insert(CategoryRequest $request)
     {   
@@ -18,6 +19,6 @@ class CategoryController extends Controller
        $data=$request->all();
        $data['slug']=Str::slug($data['name'],'-');
        $category=Category::create($data);
-        return "coucou";
+        return redirect(url('category/create'));
     }
 }

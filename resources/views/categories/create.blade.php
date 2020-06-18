@@ -11,10 +11,12 @@
       <input type="text" class="form-control" id="InputName1" name="name" aria-describedby="NameHelp" value="{{old('name','')}}">
       @error('name') <small id="NameHelp" class="form-text text-muted">{{$message}}</small> @enderror
     </div>
-   <input type="hidden" name="category_id" value="0">
-    
+   {{-- <input type="hidden" name="category_id" value="0"> --}}
+   
+   @include('categories.tree',['categories'=> $categories])
     <button type="submit" class="btn btn-primary">Soumettre</button>
   </form>
+
 
 
 @endsection
