@@ -21,4 +21,9 @@ class CategoryController extends Controller
        $category=Category::create($data);
         return redirect(url('category/create'));
     }
+    public function categories()
+    {
+        $categories = Category::whereNull("category_id")->orderBy('name')->get();
+        return view("categories.categories")->withCategories($categories);
+    }
 }

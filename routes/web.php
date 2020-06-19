@@ -31,6 +31,8 @@ Auth::routes();
 Route::get('/category/create', 'CategoryController@create')->name('create_category');
 Route::post('/category/insert', 'CategoryController@insert')->name('insert_category');
 
+Route::get('/categories', 'CategoryController@categories')->name('view_categories');
+
 Route::get('/course/create', 'CourseController@create')->name('create_course');
 Route::post('/course/insert', 'CourseController@insert')->name('insert_course');
 
