@@ -18,7 +18,7 @@
         
 </ul>
 <div class="button">
-    <a href="{{url("/categories/category-edit/")}}">Modifier</a>
+    <a href="{{url("/category/edit")}}">Modifier</a>
     {{-- <form action="{{url("/categories/delete/".$category->id)}}" method="post">
         @csrf
         @method('delete')
