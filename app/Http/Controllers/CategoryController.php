@@ -26,4 +26,15 @@ class CategoryController extends Controller
         $categories = Category::whereNull("category_id")->orderBy('name')->get();
         return view("categories.categories")->withCategories($categories);
     }
+
+    public function edit($category)
+    {
+        try {
+            $category = Category::findOrFail($category);
+        } catch (\Exception $e) {
+            return "Erreur";
+        }
+
+        return view('categories.category-edit');
+    }
 }

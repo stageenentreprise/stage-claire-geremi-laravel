@@ -33,6 +33,8 @@ Route::post('/category/insert', 'CategoryController@insert')->name('insert_categ
 
 Route::get('/categories', 'CategoryController@categories')->name('view_categories');
 
+Route::get('/category/edit', 'CategoryController@edit')->name('edit_category');
+
 Route::get('/course/create', 'CourseController@create')->name('create_course');
 Route::post('/course/insert', 'CourseController@insert')->name('insert_course');
 
