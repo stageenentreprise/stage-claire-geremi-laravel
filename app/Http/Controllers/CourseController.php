@@ -28,7 +28,7 @@ class CourseController extends Controller
     }
 
     public function courses() {
-        $courses = Course::whereNull("course_id")->get();
-        return view("")->withCourses($courses);
+        $courses = Course::orderBy('title')->get();
+        return view("course.courses")->withCourses($courses);
     }
 }
