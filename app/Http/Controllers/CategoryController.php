@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Http\Requests\CategoryRequest;
+use CreateCategoriesTable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 class CategoryController extends Controller
@@ -25,5 +26,25 @@ class CategoryController extends Controller
     {
         $categories = Category::whereNull("category_id")->orderBy('name')->get();
         return view("categories.categories")->withCategories($categories);
+    }
+
+    public function edit()
+    {
+        $categories = Category::whereNull("category_id")->orderBy('name')->get();
+        return view("categories.category-edit")->withCategories($categories);
+    }
+
+    public function update($id,CategoryRequest $request){
+
+        try {
+            $category = Category::findOrFail($id);
+            $category->name = $request->input('name');
+            $category->save();
+        } 
+        catch (\Exception $e) {
+            echo $e->getMessage();
+            return "ko";
+        }
+        return redirect('/');
     }
 }
