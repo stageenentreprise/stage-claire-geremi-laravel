@@ -30,12 +30,21 @@ class CategoryController extends Controller
 
     public function edit()
     {
-        try {
-            $categories = Category::all();
-        } catch (\Exception $e) {
-            return "Erreur";
-        }
+        $categories = Category::whereNull("category_id")->orderBy('name')->get();
+        return view("categories.category-edit")->withCategories($categories);
+    }
 
-        return view('categories.category-edit')->withCategories($categories);
+    public function update($id,CategoryRequest $request){
+
+        try {
+            $category = Category::findOrFail($id);
+            $category->name = $request->input('name');
+            $category->save();
+        } 
+        catch (\Exception $e) {
+            echo $e->getMessage();
+            return "ko";
+        }
+        return redirect('/');
     }
 }
