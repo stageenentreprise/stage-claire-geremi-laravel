@@ -18,20 +18,21 @@
     <div class="form-group">
       <label for="exampleFormControlSelect1">Catégorie</label>
       <select class="form-control" id="exampleFormControlSelect1" name="category_id">
-        @foreach ($categories as $category)
+        {{-- @foreach ($categories as $category)
             <optgroup label="{{$category->name}}">
-            <option value="{{$category->name}}">{{$category->name}}
-            @include('categories.tree-option',['categories'=> $category->children])
+            <option value="{{$category->name}}"> {{$category->name}}
+            @include('categories.tree-option',['categories'=> $category->children, "separateur"=>$separateur])
             </option>
             </optgroup>
          
-        @endforeach
+        @endforeach --}}
+        @include('categories.tree-option',['categories'=> $categories, "separateur"=>"├─"])
       </select>
     </div>
     <div class="form-group">
-      <label for="exampleFormControlTextarea1">Texte</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" name="description" value="{{ old('text') }}" rows="3"></textarea>
-      @error('text')
+      <label for="exampleFormControlTextarea1">Description</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" name="description" rows="3">{{ old('description') }}</textarea>
+      @error('description')
           {{ $message }}
       @enderror
     </div>
