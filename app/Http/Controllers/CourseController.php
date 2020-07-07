@@ -7,6 +7,7 @@ use App\Http\Requests\CourseRequest;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class CourseController extends Controller
 {
@@ -21,6 +22,7 @@ class CourseController extends Controller
         $data['created'] = Carbon::now();
         $data['updated'] = Carbon::now();
         $data['user_id'] = Auth::user()->id;
+        $data['slug']=Str::slug($data['title'],'-');
         Course::create($data);
         return 'trgre';
     }
