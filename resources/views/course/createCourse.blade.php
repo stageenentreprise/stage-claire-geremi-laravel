@@ -15,15 +15,17 @@
             {{ $message }}
         @enderror
     </div>
-
     <div class="form-group">
       <label for="exampleFormControlSelect1">Catégorie</label>
       <select class="form-control" id="exampleFormControlSelect1" name="category_id">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
+        @foreach ($categories as $category)
+            <optgroup label="{{$category->name}}">
+            <option value="{{$category->name}}">{{$category->name}}
+            @include('categories.tree-option',['categories'=> $category->children])
+            </option>
+            </optgroup>
+         
+        @endforeach
       </select>
     </div>
     <div class="form-group">

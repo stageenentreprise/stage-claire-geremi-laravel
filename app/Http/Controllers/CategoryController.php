@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Http\Requests\CategoryRequest;
+use CreateCategoriesTable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 class CategoryController extends Controller
@@ -27,14 +28,14 @@ class CategoryController extends Controller
         return view("categories.categories")->withCategories($categories);
     }
 
-    public function edit($category)
+    public function edit()
     {
         try {
-            $category = Category::findOrFail($category);
+            $categories = Category::all();
         } catch (\Exception $e) {
             return "Erreur";
         }
 
-        return view('categories.category-edit');
+        return view('categories.category-edit')->withCategories($categories);
     }
 }

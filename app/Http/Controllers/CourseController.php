@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Course;
 use App\Http\Requests\CourseRequest;
 use Carbon\Carbon;
@@ -13,8 +14,10 @@ class CourseController extends Controller
 {
     public function create() {
         $title = "Create a course";
+        $categories = Category::whereNull("category_id")->orderBy('name')->get();
         return view('course/createCourse')
-        ->withTitle($title);
+        ->withTitle($title)
+        ->withCategories($categories);
     }
 
     public function insert(CourseRequest $request) {
