@@ -1,10 +1,12 @@
 <ul>
     @foreach ($categories as $category)
-        <li><input type="radio" name="category_id" value="{{$category->id}}"> {{$category->name}}
+        @if ()
             
-            @include('categories.tree',['categories'=> $category->children])
+        <li><input type="radio" name="category_id" value="{{$category->id}}" @if ($category->id==$current) checked @endif> {{$category->name}} 
             
-        </li> 
+            @include('categories.tree',['categories'=> $category->children, "current"=>$current])
+            
+        </li> @endif
         
     @endforeach
   </ul>

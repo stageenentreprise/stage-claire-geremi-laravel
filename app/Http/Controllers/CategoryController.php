@@ -28,10 +28,11 @@ class CategoryController extends Controller
         return view("categories.categories")->withCategories($categories);
     }
 
-    public function edit()
+    public function edit($id)
     {
+        $category= Category::findOrFail($id);
         $categories = Category::whereNull("category_id")->orderBy('name')->get();
-        return view("categories.category-edit")->withCategories($categories);
+        return view("categories.category-edit")->withCategories($categories)->withCategory($category);
     }
 
     public function update($id,CategoryRequest $request){
@@ -39,7 +40,9 @@ class CategoryController extends Controller
         try {
             $category = Category::findOrFail($id);
             $category->name = $request->input('name');
+            $category->category_id = $request->input('category_id');
             $category->save();
+            return 'OKaYYY';
         } 
         catch (\Exception $e) {
             echo $e->getMessage();

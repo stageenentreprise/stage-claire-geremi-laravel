@@ -6,19 +6,8 @@
 
 
 <h2>Catégories</h2>
+@include('categories.tree-list',['categories'=> $categories])
 
-<ul>
-        @foreach ($categories as $category)
-        
-            <li>{{$category->name}}
-            @include('categories.tree',['categories'=> $category->children])
-            <a href="{{url("/category/edit/".$category->id)}}">Modifier</a>
-            </li>
-
-        @endforeach
-        
-        
-</ul>
 {{-- <div class="button">
     <a href="{{url("/category/edit")}}">Modifier</a>
     {{-- <form action="{{url("/categories/delete/".$category->id)}}" method="post">
