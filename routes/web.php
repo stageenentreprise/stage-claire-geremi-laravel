@@ -38,6 +38,7 @@ Route::post('/category/update/{id}', 'CategoryController@update');
 
 Route::get('/course/create', 'CourseController@create')->name('create_course');
 Route::post('/course/insert', 'CourseController@insert')->name('insert_course');
+Route::get('/course/edit/{id}', 'CourseController@edit')->name('course_edit');
 
 Route::get('/courses', 'CourseController@courses')->name('view_courses');
 

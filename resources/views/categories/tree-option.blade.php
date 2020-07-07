@@ -1,7 +1,6 @@
 
     @foreach ($categories as $category)
-        <li><option> {{$category->name}}
-            @include('categories.tree-option',['categories'=> $category->children])
-            </option>
-        </li> 
+        <option value="{{$category->id}}"> {{$separateur}} {{$category->name}}
+        </option>
+        @include('categories.tree-option',['categories'=> $category->children, "separateur"=>"│  ".$separateur])
     @endforeach
