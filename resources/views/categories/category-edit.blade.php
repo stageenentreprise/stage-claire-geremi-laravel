@@ -16,7 +16,8 @@
       </div>
      {{-- <input type="hidden" name="category_id" value="0"> --}}
      
-     @include('categories.tree',['categories'=> $categories, "current"=>$category->category_id])
+     @include('categories.tree',['categories'=> $categories, "currentParent"=>$category->category_id, "currentCategory"=>$category->id])
+     
       <button type="submit" class="btn btn-primary">Modifier</button>
     </form>
 

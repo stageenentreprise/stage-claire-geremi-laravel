@@ -50,4 +50,9 @@ class CategoryController extends Controller
         }
         return redirect('/');
     }
+
+    public function delete($id){
+        Category::destroy($id);
+        return redirect('/');
+    }
 }
