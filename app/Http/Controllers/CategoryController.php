@@ -53,6 +53,6 @@ class CategoryController extends Controller
 
     public function delete($id){
         Category::destroy($id);
-        return redirect('/');
+        return redirect(url('/categories'));
     }
 }

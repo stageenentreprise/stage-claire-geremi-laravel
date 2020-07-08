@@ -13,7 +13,7 @@
     </div>
    {{-- <input type="hidden" name="category_id" value="0"> --}}
    
-   @include('categories.tree',['categories'=> $categories])
+   @include('categories.tree',['categories'=> $categories, "currentParent"=>0, "currentCategory"=>0])
     <button type="submit" class="btn btn-primary">Soumettre</button>
   </form>
 
