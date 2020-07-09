@@ -40,8 +40,25 @@ class CourseController extends Controller
         ;
     }
 
+    public function view($id) {
+        try {
+            $course = Course::findOrFail($id);
+        } catch (\Exception $e) {
+            return "Erreur";
+        }
+        $categories = Category::whereNull("category_id")->get();
+
+        return view("course.edit")
+        ->withCourse($course)
+        ->withCategories($categories);
+        ;
+    }
+
     public function courses() {
         $courses = Course::orderBy('title')->get();
-        return view("course.courses")->withCourses($courses);
+        $categories = Category::whereNull("category_id")->orderBy('name')->get();
+        return view("course.courses")
+        ->withCourses($courses)
+        ->withCategories($categories);
     }
 }

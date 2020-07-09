@@ -40,9 +40,12 @@ Route::delete('/category/delete/{id}', 'CategoryController@delete');
 
 Route::get('/course/create', 'CourseController@create')->name('create_course');
 Route::post('/course/insert', 'CourseController@insert')->name('insert_course');
+Route::get('/course/view/{id}', 'CourseController@view')->name('course_view');
 Route::get('/course/edit/{id}', 'CourseController@edit')->name('course_edit');
+Route::get('/course/{id}/addpart', 'CourseController@addpart')->name('course_addpart');
 
 Route::get('/courses', 'CourseController@courses')->name('view_courses');
 
 Route::get('/part/{course}/create', 'PartController@create')->name('create_part');
 Route::post('/part/{course}/insert', 'PartController@insert')->name('insert_part');
+Route::get('/part/{id}/addchapter', 'PartController@addchapter')->name('part_addchapter');
