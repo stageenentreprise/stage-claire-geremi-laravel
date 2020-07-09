@@ -3,7 +3,7 @@
 
 @section('content')
 
-<form action="{{ url('/course/update/'.$course->id) }}" method="post">
+<form action="{{ url('/course/update/'.$course->id) }}" method="POST">
 
     @csrf
 

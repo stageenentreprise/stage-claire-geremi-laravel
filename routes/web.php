@@ -43,6 +43,7 @@ Route::post('/course/insert', 'CourseController@insert')->name('insert_course');
 Route::get('/course/view/{id}', 'CourseController@view')->name('course_view');
 Route::get('/course/edit/{id}', 'CourseController@edit')->name('course_edit');
 Route::get('/course/{id}/addpart', 'CourseController@addpart')->name('course_addpart');
+Route::post('/course/update/{id}', 'CourseController@update')->name('course_update');
 
 Route::get('/courses', 'CourseController@courses')->name('view_courses');
 

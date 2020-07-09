@@ -48,9 +48,46 @@ class CourseController extends Controller
         }
         $categories = Category::whereNull("category_id")->get();
 
+        return view("course.view")
+        ->withCourse($course)
+        ->withCategories($categories)
+        ;
+    }
+
+    public function edit($id) {
+        try {
+            $course = Course::findOrFail($id);
+        } catch (\Exception $e) {
+            return "Erreur";
+        }
+        $categories = Category::whereNull("category_id")->get();
+
         return view("course.edit")
         ->withCourse($course)
-        ->withCategories($categories);
+        ->withCategories($categories)
+        ;
+    }
+
+    public function update($id,CourseRequest $request){
+
+        try {
+            $courses = Course::orderBy('title')->get();
+            $categories = Category::whereNull("category_id")->get();
+            $course = Course::findOrFail($id);
+            $course->title = $request->input('title');
+            $course->category_id = $request->input('category_id');
+            $course->description = $request->input('description');
+            $course->save();
+            // return 'OKaYYY';
+        } 
+        catch (\Exception $e) {
+            echo $e->getMessage();
+            return "ko";
+        }
+        return redirect('/courses');
+        return view("course.courses")
+        ->withCourses($courses)
+        ->withCategories($categories)
         ;
     }
 
