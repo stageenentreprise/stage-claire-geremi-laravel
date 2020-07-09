@@ -47,6 +47,6 @@ Route::post('/course/update/{id}', 'CourseController@update')->name('course_upda
 
 Route::get('/courses', 'CourseController@courses')->name('view_courses');
 
-Route::get('/part/{course}/create', 'PartController@create')->name('create_part');
-Route::post('/part/{course}/insert', 'PartController@insert')->name('insert_part');
+Route::get('/part/{idcourse}/create', 'PartController@create')->name('create_part');
+Route::post('/part/{idcourse}/insert', 'PartController@insert')->name('insert_part');
 Route::get('/part/{id}/addchapter', 'PartController@addchapter')->name('part_addchapter');

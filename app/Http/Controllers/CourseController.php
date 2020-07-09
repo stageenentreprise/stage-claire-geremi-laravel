@@ -84,8 +84,8 @@ class CourseController extends Controller
             echo $e->getMessage();
             return "ko";
         }
-        return redirect('/courses');
-        return view("course.courses")
+        return redirect('/course/view/'.$id);
+        return view("course.view")
         ->withCourses($courses)
         ->withCategories($categories)
         ;
