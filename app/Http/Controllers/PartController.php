@@ -24,6 +24,19 @@ class PartController extends Controller
         ->withCategories($categories)
         ;
     }
+
+    public function edit($id) {
+        try {
+            $part = Part::findOrFail($id);
+        } catch (\Exception $e) {
+            return "Erreur";
+        }
+
+        return view("parts.edit")
+        ->withPart($part)
+        ;
+    }
+
     public function insert($course_id, PartRequest $request) {
         try {
             $course_id = Course::findOrFail($course_id);

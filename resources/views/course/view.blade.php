@@ -13,7 +13,7 @@
         <h5>{{$course->description}}</h5><br>
         <h4 class="card-subtitle mb-2 text-muted">Parties : </h4>
         @foreach ($parts as $part)
-            <h5>{{$part->numero}}. {{$part->title}} <a href="{{url('/course/edit/'.$part->id)}}" onclick="return confirm('Confirmez-vous la suppression de cette catégorie?');" class="btn btn-danger float-left">Supprimer</a> <a href="{{url('/course/edit/'.$part->id)}}" class="btn btn-primary">Modifier</a></h5>
+            <h5>{{$part->numero}}. {{$part->title}} <a href="{{url('/part/edit/'.$part->id)}}" onclick="return confirm('Confirmez-vous la suppression de cette catégorie?');" class="btn btn-danger float-left">Supprimer</a> <a href="{{url('/part/edit/'.$part->id)}}" class="btn btn-primary">Modifier</a></h5>
         @endforeach
         
         <div class="col text-center">

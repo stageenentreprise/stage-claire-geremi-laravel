@@ -52,3 +52,4 @@ Route::post('/part/{idcourse}/insert', 'PartController@insert')->name('insert_pa
 Route::get('/part/{id}/addchapter', 'PartController@addchapter')->name('part_addchapter');
 Route::get('/part/edit/{id}', 'PartController@edit')->name('part_edit');
 Route::delete('/part/delete/{id}', 'PartController@delete')->name('delete_part');
+Route::post('/part/update/{id}', 'PartController@update')->name('part_update');
