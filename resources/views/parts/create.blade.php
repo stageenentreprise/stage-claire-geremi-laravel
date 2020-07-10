@@ -10,7 +10,7 @@
 
   <a target="_blank" href="{{url('/course/view/'.$courseid->id)}}" class="card-link col text-center btn btn-info">{{$courseid->title}}</a>
 
-<form action="{{ url('/part/insert') }}" method="post">
+<form action="{{ url('/part/'.$courseid->id.'/insert') }}" method="post">
 
     @csrf
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Course;
 use App\Http\Requests\CourseRequest;
+use App\Part;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -47,10 +48,11 @@ class CourseController extends Controller
             return "Erreur";
         }
         $categories = Category::whereNull("category_id")->get();
-
+        $parts = Part::orderBy('numero')->get();
         return view("course.view")
         ->withCourse($course)
         ->withCategories($categories)
+        ->withParts($parts)
         ;
     }
 
@@ -74,16 +76,15 @@ class CourseController extends Controller
             $courses = Course::orderBy('title')->get();
             $categories = Category::whereNull("category_id")->get();
             $course = Course::findOrFail($id);
-            $course->title = $request->input('title');
-            $course->category_id = $request->input('category_id');
-            $course->description = $request->input('description');
-            $course->save();
-            // return 'OKaYYY';
         } 
         catch (\Exception $e) {
             echo $e->getMessage();
             return "ko";
         }
+        $course->title = $request->input('title');
+        $course->category_id = $request->input('category_id');
+        $course->description = $request->input('description');
+        $course->save();
         return redirect('/course/view/'.$id);
         return view("course.view")
         ->withCourses($courses)

@@ -50,3 +50,5 @@ Route::get('/courses', 'CourseController@courses')->name('view_courses');
 Route::get('/part/{idcourse}/create', 'PartController@create')->name('create_part');
 Route::post('/part/{idcourse}/insert', 'PartController@insert')->name('insert_part');
 Route::get('/part/{id}/addchapter', 'PartController@addchapter')->name('part_addchapter');
+Route::get('/part/edit/{id}', 'PartController@edit')->name('part_edit');
+Route::delete('/part/delete/{id}', 'PartController@delete')->name('delete_part');

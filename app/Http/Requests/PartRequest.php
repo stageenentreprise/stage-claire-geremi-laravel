@@ -25,8 +25,8 @@ class PartRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required | max:128 | min:6',
-            'id' => 'required',
+            'title' => 'required | max:128 | min:6',
+            'numero' => 'required',
             'description' => 'required',
         ];
     }
