@@ -11,6 +11,22 @@
 <body>
     <header>
         ceci est un header
+        <nav class="navbar navbar-default float-right">
+            <ul class="nav navbar-nav">
+                @if (Auth::check())
+                    <li class="navbar-brand">{{Auth::user()->name}}</li>
+                    <li>
+                        <form action="{{ url('/logout') }}" method="POST">
+                            @csrf
+                            <button type="submit">Déconnexion</button>
+                        </form>
+                    </li>
+                @else
+                    <li><a class="navbar-brand" href="register">INSCRIPTION</a></li>
+                    <li><a class="navbar-brand" href="login">CONNEXION</a></li>
+                @endif
+            </ul>
+        </nav>
     </header>
 
 

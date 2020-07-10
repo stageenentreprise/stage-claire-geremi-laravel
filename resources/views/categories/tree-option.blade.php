@@ -1,7 +1,7 @@
 
     @foreach ($categories as $category)
         <option value="{{$category->id}}" 
-        @if ($category->id == $currentCategory ?? '' ?? '')
+        @if ($category->id == $currentCategory ?? '')
             selected
         @endif > {{$separateur}} {{$category->name}}
         </option>

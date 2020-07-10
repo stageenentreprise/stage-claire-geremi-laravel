@@ -20,7 +20,7 @@ class CreateCommentsTable extends Migration
             $table->string('user_id');
             $table->string('email');
             $table->longText('content');
-            $table->int('rate');
+            $table->integer('rate');
             $table->string('slug')->unique();
         });
     }

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
+use App\Course;
 use App\Http\Requests\PartRequest;
 use App\Part;
 use Illuminate\Http\Request;
@@ -10,10 +12,18 @@ use Illuminate\Support\Str;
 
 class PartController extends Controller
 {
-    public function create() {
-        $title = "Création d'une partie";
-        return view('parts.create')
-        ->withTitle($title);
+    public function create($course_id) {
+        try {
+            $course_id = Course::findOrFail($course_id);
+        } catch (\Exception $e) {
+            return "Erreur";
+        }
+        $categories = Category::whereNull("category_id")->get();
+
+        return view("parts.create")
+        ->withCourseid($course_id)
+        ->withCategories($categories)
+        ;
     }
     public function insert(PartRequest $request) {
         $data = $request->all();

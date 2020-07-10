@@ -18,15 +18,7 @@
     <div class="form-group">
       <label for="exampleFormControlSelect1">Catégorie</label>
       <select class="form-control" id="exampleFormControlSelect1" name="category_id">
-        {{-- @foreach ($categories as $category)
-            <optgroup label="{{$category->name}}">
-            <option value="{{$category->name}}"> {{$category->name}}
-            @include('categories.tree-option',['categories'=> $category->children, "separateur"=>$separateur])
-            </option>
-            </optgroup>
-         
-        @endforeach --}}
-        @include('categories.tree-option',['categories'=> $categories, "separateur"=>"├─"])
+        @include('categories.tree-option',['categories'=> $categories, "separateur"=>"├─", "currentCategory"=> $course ?? ''])
       </select>
     </div>
     <div class="form-group">

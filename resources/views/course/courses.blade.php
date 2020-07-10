@@ -18,6 +18,8 @@
             </li>
          
         @endforeach
+
+        <a href="{{url("/course/create")}}">Créer une formation</a>
         
         
 </ul>
