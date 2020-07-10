@@ -21,6 +21,12 @@ class CreateCommentsTable extends Migration
             $table->string('email');
             $table->longText('content');
             $table->integer('rate');
+            // $table->integer('commentable_id');
+            // $table->string('commentable_type');
+            $table->bigInteger('course_id')->unsigned()->nullable();
+            $table->foreign('course_id')
+                ->references('id')
+                ->on('course');
             $table->string('slug')->unique();
         });
     }
