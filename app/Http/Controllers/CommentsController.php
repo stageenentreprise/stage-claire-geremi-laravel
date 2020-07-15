@@ -12,6 +12,7 @@ class CommentsController extends Controller
         } catch (\Exception $e) {
             return "Erreur";
         }
+        
         return view("comments.comment");
     }
 }
