@@ -39,8 +39,8 @@ Route::post('/category/update/{id}', 'CategoryController@update');
 
 Route::delete('/category/delete/{id}', 'CategoryController@delete');
 
-Route::get('/comment/create', 'CommentsController@create');
-Route::post('/comment/insert', 'CommentsController@insert');
+Route::get('/comment/{idcourse}/create', 'CommentsController@create');
+Route::post('/comment/{idcourse}/insert', 'CommentsController@insert');
 
 Route::get('/course/create', 'CourseController@create')->name('create_course');
 Route::post('/course/insert', 'CourseController@insert')->name('insert_course');

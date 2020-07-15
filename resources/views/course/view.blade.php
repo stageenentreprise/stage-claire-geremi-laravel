@@ -28,7 +28,7 @@
         <div class="row">
             <a href="{{url('/course/edit/'.$course->id)}}" class="card-link col text-center btn btn-primary">Modifier la formation</a>
         </div>
-        <a href="{{url("/comment/create")}}">Laisser un commentaire</a>
+        <a href="{{url('/comment/'.$course->id.'/create')}}">Laisser un commentaire</a>
     </div>
 </div>
 
