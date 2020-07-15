@@ -51,4 +51,42 @@ class PartController extends Controller
         Part::create($data);
         return redirect('/course/view/'.$course_id->id);
     }
+
+    public function update($id, PartRequest $request){
+
+        try {
+            $parts = Part::orderBy('numero')->get();
+            $part = Part::findOrFail($id);
+        } 
+        catch (\Exception $e) {
+            echo $e->getMessage();
+            return "ko";
+        }
+        $part->title = $request->input('title');
+        $part->numero = $request->input('numero');
+        $part->description = $request->input('description');
+        $part->save();
+        return redirect('/courses');
+        return view("parts.edit")
+        ->withParts($parts)
+        ;
+    }
+
+    public function delete($id){
+        $part = Part::findOrFail($id);
+        $course_id = $part->course_id;
+        $part->delete();
+        return redirect(url('/course/view/'.$course_id));
+    }
+
+    public function addchapter($id) {
+        try {
+            $id = Part::findOrFail($id);
+        } catch (\Exception $e) {
+            return "Partie introuvable";
+        }
+        return view('chapters.create')
+        ->withId($id)
+        ;
+    }
 }

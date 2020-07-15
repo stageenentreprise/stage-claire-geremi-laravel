@@ -31,9 +31,6 @@ class CourseController extends Controller
         $data = $request->all();
         $data['created'] = Carbon::now();
         $data['updated'] = Carbon::now();
-        // DB::table('courses')->insert(
-        //     ['category_id' => 'john@example.com']
-        // );
         $data['user_id'] = Auth::user()->id;
         $data['slug']=Str::slug($data['title'],'-');
         Course::create($data);
