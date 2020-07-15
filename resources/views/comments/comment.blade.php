@@ -8,7 +8,7 @@
 --><a href="#1" title="Donner 1 étoile">☆</a>
 </div>
    <input type="text" name="pseudo" placeholder="Votre pseudo" /><br />
-   <textarea name="commentaire" placeholder="Votre commentaire..."></textarea><br />
+   <textarea name="commentaire" rows="10" cols="100" placeholder="Votre commentaire..."></textarea><br />
    <input type="submit" value="Poster mon commentaire" name="submit_commentaire" />
 </form>
 
