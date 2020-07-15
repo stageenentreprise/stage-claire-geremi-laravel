@@ -44,6 +44,7 @@ class CourseController extends Controller
         } catch (\Exception $e) {
             return "Erreur";
         }
+        // $course_id = $course;
         $categories = Category::whereNull("category_id")->get();
         $parts = Part::orderBy('numero')->get();
         return view("course.view")
