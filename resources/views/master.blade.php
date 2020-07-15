@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ asset ('css/main.css?debug='.mt_rand(0,100000000)) }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <title>{{$title ?? 'Bienvenue à l\'accueil'}}</title>
+    @yield('head')
 </head>
 <body>
     <header>
@@ -33,5 +34,6 @@
     @yield('content')
 
     @yield('footer')
+    @yield('scripts')
 </body>
 </html>
