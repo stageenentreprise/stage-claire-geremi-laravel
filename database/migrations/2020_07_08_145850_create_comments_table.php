@@ -16,18 +16,17 @@ class CreateCommentsTable extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            // $table->increments('id');
-            $table->string('user_id');
-            $table->string('email');
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign('user_id')
+            ->references('id')
+            ->on('users');
             $table->longText('content');
-            $table->integer('rate');
-            // $table->integer('commentable_id');
-            // $table->string('commentable_type');
-            $table->bigInteger('course_id')->unsigned()->nullable();
+            $table->tinyInteger('rate')->unsigned();
+            $table->bigInteger('course_id')->unsigned();
             $table->foreign('course_id')
                 ->references('id')
-                ->on('course');
-            $table->string('slug')->unique();
+                ->on('courses');
+            
         });
     }
 
