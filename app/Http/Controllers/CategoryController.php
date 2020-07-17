@@ -32,7 +32,9 @@ class CategoryController extends Controller
     {
         $category= Category::findOrFail($id);
         $categories = Category::whereNull("category_id")->orderBy('name')->get();
-        return view("categories.category-edit")->withCategories($categories)->withCategory($category);
+        return view("categories.category-edit")
+        ->withCategories($categories)
+        ->withCategory($category);
     }
 
     public function update($id,CategoryRequest $request){
@@ -42,7 +44,8 @@ class CategoryController extends Controller
             $category->name = $request->input('name');
             $category->category_id = $request->input('category_id');
             $category->save();
-            return 'OKaYYY';
+
+            return redirect(url('/categories'));
         } 
         catch (\Exception $e) {
             echo $e->getMessage();

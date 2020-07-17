@@ -31,7 +31,8 @@ class CommentsController extends Controller
         $data['course_id'] = $course_id;
         $comment=Comment::create($data);
         
-        return redirect(url('/course/view/' .$course_id));
+        return redirect(url('/course/view/' .$course_id))
+        ;
 
     }
 }

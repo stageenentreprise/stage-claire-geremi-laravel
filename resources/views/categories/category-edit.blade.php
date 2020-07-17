@@ -18,7 +18,7 @@
      
      @include('categories.tree',['categories'=> $categories, "currentParent"=>$category->category_id, "currentCategory"=>$category->id])
      
-      <button type="submit" class="btn btn-primary">Modifier</button>
+      <button type="submit" class="btn btn-primary">Soumettre</button>
     </form>
 
 
