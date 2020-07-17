@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Chapter;
 use App\Course;
 use App\Http\Requests\PartRequest;
 use App\Part;
@@ -88,5 +89,22 @@ class PartController extends Controller
         return view('chapters.create')
         ->withId($id)
         ;
+    }
+
+    public function insertchapter($part_id, PartRequest $request) {
+        try {
+            $part_id = Part::findOrFail($part_id);
+        } catch (\Exception $e) {
+            return "Erreur";
+        }
+        $data = $request->all();
+        $data['user_id'] = Auth::user()->id;
+        $data['part_id'] = $part_id->id;
+        $video = $request->file('video');
+        $name = $part_id->id.".mp4";
+        $destinationPath = storage_path('/videos');
+        $video->move($destinationPath, $name);
+        Chapter::create($data);
+        return redirect('/course/view/'.$course_id->id);
     }
 }
