@@ -32,6 +32,18 @@
     </div>
 </div>
 
+<div class="card text-center" style="width: 18rem;">
+    <div class="card-body col text-center">
+        <h3 class="card-title">Commentaires</h3><br>
+        @foreach ($comments as $comment)
+            <h5> @foreach ($users as $user)
+                {{$user->name}}
+            @endforeach {{$comment->content}} {{$comment->rate}} </h5>
+        @endforeach
+        
+    </div>
+</div>
+
 
 <div class="row">
     <div class="col text-center">
