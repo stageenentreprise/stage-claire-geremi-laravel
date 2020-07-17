@@ -105,6 +105,6 @@ class PartController extends Controller
         $destinationPath = storage_path('/videos');
         $video->move($destinationPath, $name);
         Chapter::create($data);
-        return redirect('/course/view/'.$course_id->id);
+        return redirect('/part/view/'.$part_id->id);
     }
 }
