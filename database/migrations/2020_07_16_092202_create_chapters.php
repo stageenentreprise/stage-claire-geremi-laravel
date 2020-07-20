@@ -23,7 +23,7 @@ class CreateChapters extends Migration
             $table->bigInteger('part_id')->unsigned()->nullable();
             $table->foreign('part_id')
                 ->references('id')
-                ->on('part');
+                ->on('parts');
         });
     }
 

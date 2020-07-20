@@ -18,10 +18,10 @@ class CreateParts extends Migration
             $table->string('title');
             $table->string('description');
             $table->integer('numero')->default(0);
-            $table->bigInteger('course_id')->unsigned()->nullable();
+            $table->bigInteger('course_id')->unsigned();
             $table->foreign('course_id')
                 ->references('id')
-                ->on('course');
+                ->on('courses');
         });
     }
 
