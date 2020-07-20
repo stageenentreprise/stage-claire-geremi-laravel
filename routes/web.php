@@ -61,4 +61,4 @@ Route::delete('/part/delete/{id}', 'PartController@delete')->name('delete_part')
 Route::post('/part/update/{id}', 'PartController@update')->name('part_update');
 Route::get('/part/view/{id}', 'PartController@view')->name('part_view');
 
-Route::get('/chapter/{id}/insert', 'PartController@insertchapter')->name('chapter_insert');
+Route::post('/chapter/{id}/insert', 'PartController@insertchapter')->name('chapter_insert');

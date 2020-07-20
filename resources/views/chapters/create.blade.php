@@ -3,14 +3,14 @@
 
 @section('content')
 
-<form action="{{url('/chapter/'.$id->id.'/insert')}}" method="post">
+<form action="{{url('/chapter/'.$id->id.'/insert')}}" method="post" enctype="multipart/form-data" >
 
     @csrf
 
 
     <div class="form-group">
-        <label for="exampleFormControlInput1">Titre de la partie</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" name="title" value="{{ old('title') }}" placeholder="Une superbe partie !" required>
+        <label for="exampleFormControlInput1">Titre du chapitre</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" name="title" value="{{ old('title') }}" placeholder="Un super chapitre !" required>
         @error('title')
             {{ $message }}
         @enderror

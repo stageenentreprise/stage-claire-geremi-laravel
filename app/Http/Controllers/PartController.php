@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Chapter;
 use App\Course;
+use App\Http\Requests\ChapterRequest;
 use App\Http\Requests\PartRequest;
 use App\Part;
 use Illuminate\Http\Request;
@@ -23,6 +24,19 @@ class PartController extends Controller
         return view("parts.create")
         ->withCourseid($course_id)
         ->withCategories($categories)
+        ;
+    }
+
+    public function view($id) {
+        try {
+            $part = Part::findOrFail($id);
+        } catch (\Exception $e) {
+            return "Erreur";
+        }
+        $chapters = Chapter::orderBy('numero')->get();
+        return view("parts.view")
+        ->withPart($part)
+        ->withChapters($chapters)
         ;
     }
 
@@ -91,20 +105,20 @@ class PartController extends Controller
         ;
     }
 
-    public function insertchapter($part_id, PartRequest $request) {
+    public function insertchapter($part_id, ChapterRequest $request) {
         try {
-            $part_id = Part::findOrFail($part_id);
+            $part = Part::findOrFail($part_id);
         } catch (\Exception $e) {
             return "Erreur";
         }
         $data = $request->all();
         $data['user_id'] = Auth::user()->id;
-        $data['part_id'] = $part_id->id;
+        $data['part_id'] = $part->id;
         $video = $request->file('video');
-        $name = $part_id->id.".mp4";
+        $name = $part->id.".mp4";
         $destinationPath = storage_path('/videos');
         $video->move($destinationPath, $name);
         Chapter::create($data);
-        return redirect('/part/view/'.$part_id->id);
+        return redirect('/part/view/'.$part->id);
     }
 }
