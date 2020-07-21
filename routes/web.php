@@ -31,6 +31,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
+Route::get('/gnia/{id}', 'CategoryController@frontView')->name('view_front_categories'); //catégories utilisateur
+Route::get('/slap/{id}', 'CourseController@frontView')->name('view_front_courses');
+
 Route::get('/dashboard', 'DashboardController@index')->name('view_dashboard');
 
 Route::get('/category/create', 'CategoryController@create')->name('create_category');

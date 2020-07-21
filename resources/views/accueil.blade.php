@@ -14,7 +14,7 @@
           <a href="#"><img width="700" height="250" class="card-img-top" src="/stage/stage-claire-geremi-laravel/resources/images/html.jpg" alt=""></a>
           <div class="card-body">
             <h4 class="card-title">
-              <a href="#">HTML/CSS</a>
+              <a href="/stage/stage-claire-geremi-laravel/public/gnia/2".>HTML/CSS</a>
             </h4>
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
           </div>

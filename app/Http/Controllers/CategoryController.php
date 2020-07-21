@@ -58,4 +58,16 @@ class CategoryController extends Controller
         Category::destroy($id);
         return redirect(url('/categories'));
     }
+
+    public function frontView($id) {
+        $categories = Category::whereNull("category_id")->orderBy('name')->get();
+        $currentCategory2 = Category::findOrFail($id);
+        $separateur = "├─";
+        return view("user.categories")
+        ->withCategories($categories)
+        ->withCurrentCategory2($currentCategory2)
+        ->withSeparateur($separateur)
+        ;
+    }
+
 }

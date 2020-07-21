@@ -103,4 +103,11 @@ class CourseController extends Controller
         ->withCourses($courses)
         ->withCategories($categories);
     }
+
+    public function frontView($id) {
+        $currentCategory2 = Category::findOrFail($id);
+        return view("user.courses")
+        ->withCurrentCategory2($currentCategory2)
+        ;
+    }
 }
