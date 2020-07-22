@@ -24,7 +24,7 @@
                   <a class="nav-link" href="/stage/stage-claire-geremi-laravel/public/gnia">Catégories <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Autre</a>
+                  <a class="nav-link" href="/stage/stage-claire-geremi-laravel/public/slap">Nos formations</a>
                 </li>
               </ul>
             </div>

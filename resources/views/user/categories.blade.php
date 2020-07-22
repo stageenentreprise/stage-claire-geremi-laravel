@@ -30,6 +30,18 @@ use App\Category;
     <a href="/stage/stage-claire-geremi-laravel/public/slap/{{$category->id}}">{{ $category->name }}</a>
     @endforeach
 
+<br><br><h2 class="text-center">Liste des formations relatives à la catégorie {{$currentCategory2->name}}</h2>
+    @foreach ($courses as $course)
+    <div class="card text-center float-left" style="width: 18rem; margin: 1rem;">
+        <div class="card-body col text-center">
+            <h3 class="card-title">{{$course->title}}</h3><br>
+            <h4 class="card-subtitle mb-2 text-muted">Description : </h4>
+            <h5>{{$course->description}}</h5><br>
+            <a href="{{url('/slap/'.$course->id)}}">Accéder à la formation</a>
+        </div>
+    </div>        
+    @endforeach
+
 
 
 @endsection

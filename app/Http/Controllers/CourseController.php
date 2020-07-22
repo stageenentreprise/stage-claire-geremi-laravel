@@ -110,4 +110,6 @@ class CourseController extends Controller
         ->withCurrentCategory2($currentCategory2)
         ;
     }
+
+    
 }

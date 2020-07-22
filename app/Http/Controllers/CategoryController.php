@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Course;
 use App\Http\Requests\CategoryRequest;
 use CreateCategoriesTable;
 use Illuminate\Http\Request;
@@ -61,12 +62,17 @@ class CategoryController extends Controller
 
     public function frontView($id) {
         $categories = Category::whereNull("category_id")->orderBy('name')->get();
+        foreach ($categories as $category) {
+        $courses = Course::where('category_id', '=', $category->id)->get();
+        }
+        // $owners = Owner::where('id', '>', 0)->orderBy('name', 'desc')->get(); 
         $currentCategory2 = Category::findOrFail($id);
         $separateur = "├─";
         return view("user.categories")
         ->withCategories($categories)
         ->withCurrentCategory2($currentCategory2)
         ->withSeparateur($separateur)
+        ->withCourses($courses)
         ;
     }
 

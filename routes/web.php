@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CommentsController;
+use App\Http\Controllers\CourseController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -32,7 +33,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/gnia/{id}', 'CategoryController@frontView')->name('view_front_categories'); //catégories utilisateur
-Route::get('/slap/{id}', 'CourseController@frontView')->name('view_front_courses');
+Route::get('/slap', 'CourseController@frontView')->name('view_front_courses');
 
 Route::get('/dashboard', 'DashboardController@index')->name('view_dashboard');
 
