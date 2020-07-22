@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use PhpParser\Node\Stmt\TryCatch;
 
 class CourseController extends Controller
 {
@@ -106,12 +107,22 @@ class CourseController extends Controller
         ->withCategories($categories);
     }
 
-    public function frontView($id) {
-        $currentCategory2 = Category::findOrFail($id);
+    public function frontView() {
+        $courses = Course::all();
         return view("user.courses")
-        ->withCurrentCategory2($currentCategory2)
+        ->withCourses($courses)
         ;
     }
 
+    public function frontViewCourse($id) {
+        try {
+            $course = Course::findOrFail($id);
+        } catch (\Exception $e) {
+            return "Formation introuvable";
+        }
+        return view("user.view-front")
+        ->withCourse($course)
+        ;
+    }
     
 }

@@ -34,6 +34,7 @@ Auth::routes();
 
 Route::get('/gnia/{id}', 'CategoryController@frontView')->name('view_front_categories'); //catégories utilisateur
 Route::get('/slap', 'CourseController@frontView')->name('view_front_courses');
+Route::get('/slap/view/{id}', 'CourseController@frontViewCourse')->name('view_front_course');
 
 Route::get('/dashboard', 'DashboardController@index')->name('view_dashboard');
 
