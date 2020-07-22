@@ -16,6 +16,13 @@
         @enderror
     </div>
     <div class="form-group">
+        <label for="exampleFormControlInput1">Numéro du chapitre</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" name="numero" value="{{ old('title') }}" placeholder="numéro" required>
+        @error('title')
+            {{ $message }}
+        @enderror
+    </div>
+    <div class="form-group">
       <label for="exampleFormControlTextarea1">Contenu</label>
       <textarea class="form-control" id="mce" name="content" rows="3">{{ old('description') }}</textarea>
       @error('content')

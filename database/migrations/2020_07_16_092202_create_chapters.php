@@ -17,7 +17,7 @@ class CreateChapters extends Migration
             $table->id();
             $table->timestamps();
             $table->string('title');
-            $table->string('content');
+            $table->longText('content');
             $table->string('video');
             $table->integer('numero')->default(0);
             $table->bigInteger('part_id')->unsigned()->nullable();
