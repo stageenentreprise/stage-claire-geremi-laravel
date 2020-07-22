@@ -13,7 +13,7 @@
         <h5>{{$course->description}}</h5><br>
         <h4 class="card-subtitle mb-2 text-muted">Parties : </h4>
         
-        @foreach ($parts as $part)
+        @foreach ($course->parts as $part)
         <form action="{{url('/part/delete/'.$part->id)}}" method="POST">
         @csrf
         @method('delete')

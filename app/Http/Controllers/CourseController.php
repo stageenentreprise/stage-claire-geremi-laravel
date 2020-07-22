@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Chapter;
 use App\Comment;
 use App\Course;
 use App\Http\Requests\CourseRequest;
@@ -46,15 +47,16 @@ class CourseController extends Controller
         } catch (\Exception $e) {
             return "Erreur";
         }
-        // $course_id = $course;
         $categories = Category::whereNull("category_id")->get();
         $parts = Part::orderBy('numero')->get();
+        $chapters = Chapter::orderBy('numero')->get();
         $comments = Comment::orderBy('updated_at', 'desc')->get();
         $users = User::orderBy('name')->get();
         return view("course.view")
         ->withCourse($course)
         ->withCategories($categories)
         ->withParts($parts)
+        ->withChapters($chapters)
         ->withComments($comments)
         ->withUsers($users)
         ;

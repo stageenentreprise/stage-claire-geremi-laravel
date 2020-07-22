@@ -10,4 +10,14 @@ class Course extends Model
         'created', 'updated', 'title', 'user_id','description', 'category_id'
     ]; 
     public $timestamps = false;
+
+    public function parts()
+    {
+        return $this->hasMany('App\Part');
+    }
+
+    public function chapters()
+    {
+        return $this->hasMany('app\Chapter');
+    }
 }
