@@ -21,6 +21,9 @@
             <input type="text" class="form-control" id="exampleFormControlInput1" name="courseid" value="{{ $part->course_id }}" required>
             </form>
             <a href="{{url('/part/edit/'.$part->id)}}" class="btn btn-primary">Modifier</a> </h5>
+            @foreach ($course->chapters as $chapter)
+                <h5>{{$chapter->numero}}  {{$chapter->title}}</h5>
+            @endforeach
         @endforeach
         <div class="col text-center">
             <a href="{{url('/part/'.$course->id.'/create')}}" class="card-link col text-center btn btn-secondary">Ajouter une partie</a>

@@ -36,7 +36,18 @@ class CourseController extends Controller
         $data['created'] = Carbon::now();
         $data['updated'] = Carbon::now();
         $data['user_id'] = Auth::user()->id;
-        $data['slug']=Str::slug($data['title'],'-');
+        $suffixe = "";
+        do{
+            $data['slug']=Str::slug($data['title'],'-') . $suffixe;
+            $exist = Course::where('slug', $data['slug'])->first();
+            if($exist != null) {
+                if ($suffixe == "") {
+                    $suffixe = 2;
+                } else {
+                    $suffixe++;
+                }
+            }
+        } while($exist != null); 
         Course::create($data);
         return "Vous avez créé une formation ! <br> Nom : " . $data['title']
         ;
@@ -114,15 +125,17 @@ class CourseController extends Controller
         ;
     }
 
-    public function frontViewCourse($id) {
+    public function frontViewCourse($slug) {
         try {
-            $course = Course::findOrFail($id);
+            // $course = Course::findOrFail($id);
+            $course = Course::where('slug', $slug)->first();
         } catch (\Exception $e) {
             return "Formation introuvable";
         }
-        $parts = Part::where('course_id', '=', $id);
+
         return view("user.view-front")
         ->withCourse($course)
+
         ;
     }
     

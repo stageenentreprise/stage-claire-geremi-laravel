@@ -7,8 +7,16 @@
 
 <div id="formation" class="text-center">
     <h1>{{$course->title}}</h1>
+    <p>{{$course->description}}</p>
 </div>
-{{$parts}}
+@foreach ($course->parts as $part)
+    Partie {{$part->numero}} : {{$part->title}} <br>
+    @foreach ($part->chapters as $chapter)
+        Chapitre {{$chapter->numero}} : {{$chapter->title}} <br>
+    @endforeach
+    <br>
+@endforeach
+
 
 
 

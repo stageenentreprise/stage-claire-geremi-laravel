@@ -10,4 +10,9 @@ class Part extends Model
         'id', 'course_id', 'title', 'numero', 'description'
     ];
     public $timestamps = false;
+
+    public function chapters()
+    {
+        return $this->hasMany('App\Chapter')->orderBy('numero');
+    }
 }

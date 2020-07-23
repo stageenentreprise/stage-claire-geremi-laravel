@@ -42,8 +42,8 @@
                         </form>
                     </li>
                 @else
-                    <li><a class="navbar-brand" href="register">INSCRIPTION</a></li>
-                    <li><a class="navbar-brand" href="login">CONNEXION</a></li>
+                    <li><a class="navbar-brand" href="/stage/stage-claire-geremi-laravel/public/register">INSCRIPTION</a></li>
+                    <li><a class="navbar-brand" href="/stage/stage-claire-geremi-laravel/public/login">CONNEXION</a></li>
                 @endif
             </ul>
         </nav>
