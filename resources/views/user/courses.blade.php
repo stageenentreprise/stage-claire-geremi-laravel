@@ -15,10 +15,7 @@
         <form action="{{url('/part/delete/'.$part->id)}}" method="POST">
         @csrf
         @method('delete')
-            <h5>{{$part->numero}}. {{$part->title}} <button type="submit" onclick="return confirm('Confirmez-vous la suppression de cette catégorie?');" class="btn btn-danger float-left">Supprimer</button>
-            <input type="text" class="form-control" id="exampleFormControlInput1" name="courseid" value="{{ $part->course_id }}" required>
-            </form>
-            <a href="{{url('/part/edit/'.$part->id)}}" class="btn btn-primary">Modifier</a> </h5>
+            <h5>{{$part->numero}}. {{$part->title}}</h5>
         @endforeach
         <div class="col text-center">
             <a href="{{url('/slap/view/'.$course->id.'/')}}" class="card-link col text-center btn btn-secondary">Consulter</a>

@@ -8,6 +8,7 @@
 <div id="formation" class="text-center">
     <h1>{{$course->title}}</h1>
 </div>
+{{$parts}}
 
 
 

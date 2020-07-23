@@ -120,6 +120,7 @@ class CourseController extends Controller
         } catch (\Exception $e) {
             return "Formation introuvable";
         }
+        $parts = Part::where('course_id', '=', $id);
         return view("user.view-front")
         ->withCourse($course)
         ;
