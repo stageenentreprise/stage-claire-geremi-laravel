@@ -32,7 +32,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::get('/category/{id}', 'CategoryController@frontView')->name('view_front_categories'); //catégories utilisateur
+Route::get('/category/{slug}', 'CategoryController@frontView')->name('view_front_categories'); //catégories utilisateur
 Route::get('/formations', 'CourseController@frontView')->name('view_front_courses');
 Route::get('/formation/{slug}', 'CourseController@frontViewCourse')->name('view_front_course');
 

@@ -19,7 +19,18 @@ class CategoryController extends Controller
     {   
        // dd($request->all());
        $data=$request->all();
-       $data['slug']=Str::slug($data['name'],'-');
+       $suffixe = "";
+        do{
+            $data['slug']=Str::slug($data['title'],'-') . $suffixe;
+            $exist = Category::where('slug', $data['slug'])->first();
+            if($exist != null) {
+                if ($suffixe == "") {
+                    $suffixe = 2;
+                } else {
+                    $suffixe++;
+                }
+            }
+        } while($exist != null); 
        $category=Category::create($data);
         return redirect(url('category/create'));
     }
@@ -60,13 +71,14 @@ class CategoryController extends Controller
         return redirect(url('/categories'));
     }
 
-    public function frontView($id) {
+    public function frontView($slug) {
         $categories = Category::whereNull("category_id")->orderBy('name')->get();
         foreach ($categories as $category) {
         $courses = Course::where('category_id', '=', $category->id)->get();
         }
         // $owners = Owner::where('id', '>', 0)->orderBy('name', 'desc')->get(); 
-        $currentCategory2 = Category::findOrFail($id);
+        // $currentCategory2 = Category::findOrFail($id);
+        $currentCategory2 = Category::where('slug',$slug)->first();
         $separateur = "├─";
         return view("user.categories")
         ->withCategories($categories)

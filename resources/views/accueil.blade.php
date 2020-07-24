@@ -14,7 +14,7 @@
           <a href="#"><img width="700" height="250" class="card-img-top" src="/stage/stage-claire-geremi-laravel/resources/images/html.jpg" alt=""></a>
           <div class="card-body">
             <h4 class="card-title">
-              <a href="/stage/stage-claire-geremi-laravel/public/formation/html-css".>HTML/CSS</a>
+              <a href="/stage/stage-claire-geremi-laravel/public/category/htmlcss".>HTML/CSS</a>
             </h4>
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
           </div>
@@ -25,7 +25,7 @@
           <a href="#"><img width="700" height="250" class="card-img-top" src="/stage/stage-claire-geremi-laravel/resources/images/javascript.png" alt=""></a>
           <div class="card-body">
             <h4 class="card-title">
-              <a href="#">JavaScript</a>
+              <a href="/stage/stage-claire-geremi-laravel/public/category/javascript">JavaScript</a>
             </h4>
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
           </div>
@@ -36,7 +36,7 @@
           <a href="#"><img width="700" height="250" class="card-img-top" src="/stage/stage-claire-geremi-laravel/resources/images/php.jfif" alt=""></a>
           <div class="card-body">
             <h4 class="card-title">
-              <a href="#">PHP</a>
+              <a href="/stage/stage-claire-geremi-laravel/public/category/php">PHP</a>
             </h4>
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
           </div>
@@ -47,7 +47,7 @@
           <a href="#"><img width="700" height="250" class="card-img-top" src="/stage/stage-claire-geremi-laravel/resources/images/c.png" alt=""></a>
           <div class="card-body">
             <h4 class="card-title">
-              <a href="#">C</a>
+              <a href="/stage/stage-claire-geremi-laravel/public/category/c">C</a>
             </h4>
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
           </div>
@@ -58,7 +58,7 @@
           <a href="#"><img width="700" height="250" class="card-img-top" src="/stage/stage-claire-geremi-laravel/resources/images/c++.png" alt=""></a>
           <div class="card-body">
             <h4 class="card-title">
-              <a href="#">C++</a>
+              <a href="/stage/stage-claire-geremi-laravel/public/category/cpp">C++</a>
             </h4>
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
           </div>
@@ -69,7 +69,7 @@
           <a href="#"><img width="700" height="250" class="card-img-top" src="/stage/stage-claire-geremi-laravel/resources/images/ruby.png" alt=""></a>
           <div class="card-body">
             <h4 class="card-title">
-              <a href="#">Ruby</a>
+              <a href="/stage/stage-claire-geremi-laravel/public/category/ruby">Ruby</a>
             </h4>
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
           </div>
