@@ -12,13 +12,11 @@
         <h4 class="card-subtitle mb-2 text-muted">Parties : </h4>
         
         @foreach ($course->parts as $part)
-        <form action="{{url('/part/delete/'.$part->id)}}" method="POST">
         @csrf
-        @method('delete')
             <h5>{{$part->numero}}. {{$part->title}}</h5>
         @endforeach
         <div class="col text-center">
-            <a href="{{url('/formation/'.$course->slug.'/')}}" class="card-link col text-center btn btn-secondary">Consulter</a>
+            <a href="{{url('/formation/'.$course->slug.'/1/1')}}" class="card-link col text-center btn btn-secondary">Consulter</a>
         </div><br>
     </div>
 </div>

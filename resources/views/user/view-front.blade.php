@@ -17,12 +17,21 @@
     <br>
 @endforeach
 
+<div class="container border border-success text-center" >
+{{$partNumero}}
+Titre de la partie : {{$course->parts[$partNumero - 1]->title}} <br>
+Description de la partie : {{$course->parts[$partNumero - 1]->description}} <br>
+Titre du chapitre : {{$course->parts[$partNumero - 1]->chapters[$chapterNumero - 1]->title}} <br>
+{{$course->parts[$partNumero - 1]->chapters[$chapterNumero - 1]->content}}
 
+    
+    
+</div>
 
 
 <div class="row">
     <div class="col text-center">
-        <a href="{{url("/slap")}}">Liste des formations</a>
+        <a href="{{url("/formations")}}">Liste des formations</a>
     </div>
 </div>
 

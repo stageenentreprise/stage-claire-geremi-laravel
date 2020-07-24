@@ -87,5 +87,13 @@ class CategoryController extends Controller
         ->withCourses($courses)
         ;
     }
+    public function frontViewList() {
+        $categories = Category::whereNull("category_id")->orderBy('name')->get();
+        $separateur = "├─";
+        return view("user.categories-list")
+        ->withCategories($categories)
+        ->withSeparateur($separateur)
+        ;
+    }
 
 }
