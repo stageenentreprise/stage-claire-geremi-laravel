@@ -18,7 +18,7 @@
             <h5>{{$part->numero}}. {{$part->title}}</h5>
         @endforeach
         <div class="col text-center">
-            <a href="{{url('/slap/view/'.$course->slug.'/')}}" class="card-link col text-center btn btn-secondary">Consulter</a>
+            <a href="{{url('/formation/'.$course->slug.'/')}}" class="card-link col text-center btn btn-secondary">Consulter</a>
         </div><br>
     </div>
 </div>
