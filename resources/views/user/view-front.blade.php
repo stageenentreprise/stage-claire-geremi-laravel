@@ -12,7 +12,7 @@
 @foreach ($course->parts as $part)
     Partie {{$part->numero}} : {{$part->title}} <br>
     @foreach ($part->chapters as $chapter)
-        Chapitre {{$chapter->numero}} : {{$chapter->title}} <br>
+        Chapitre {{$chapter->numero}} : {{$chapter->title}} <br> 
     @endforeach
     <br>
 @endforeach
