@@ -22,7 +22,7 @@
 Titre de la partie : {{$course->parts[$partNumero - 1]->title}} <br>
 Description de la partie : {{$course->parts[$partNumero - 1]->description}} <br>
 Titre du chapitre : {{$course->parts[$partNumero - 1]->chapters[$chapterNumero - 1]->title}} <br>
-{{$course->parts[$partNumero - 1]->chapters[$chapterNumero - 1]->content}}
+{{!! $course->parts[$partNumero - 1]->chapters[$chapterNumero - 1]->content !!}}
 
     
     

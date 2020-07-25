@@ -19,7 +19,7 @@ use App\Category;
         $currentCategoryUpdate = Category::findOrFail($currentCategoryUpdate->category_id);
         // echo $currentCategoryUpdate->name;
         // echo '<li class="breadcrumb-item"><a href=""</a>' . $currentCategoryUpdate->name . '</a></li>';
-        echo '<li class="breadcrumb-item"><a href="/stage/stage-claire-geremi-laravel/public/category/' ?>{{$currentCategoryUpdate->slug}} <?php echo '"</a>' . $currentCategoryUpdate->name . '</a></li>';
+        echo '<li class="breadcrumb-item"><a href="/stage/stage-claire-geremi-laravel/public/category/consultation/' ?>{{$currentCategoryUpdate->slug}} <?php echo '"</a>' . $currentCategoryUpdate->name . '</a></li>';
         
     } 
     echo '<li class="breadcrumb-item active"><a href="">' . $currentCategory2->name . '</a></li></ol></nav>';
@@ -27,7 +27,7 @@ use App\Category;
 ?>
 {{-- {{ $currentCategory2->name }} <br> --}}
     @foreach ($currentCategory2->children as $category)
-    <a href="/stage/stage-claire-geremi-laravel/public/category/{{$category->slug}}">{{ $category->name }}</a>
+    <a href="/stage/stage-claire-geremi-laravel/public/category/consultation/{{$category->slug}}">{{ $category->name }}</a>
     @endforeach
 
 <br><br><h2 class="text-center">Liste des formations relatives à la catégorie {{$currentCategory2->name}}</h2>

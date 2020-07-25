@@ -37,8 +37,9 @@ class CourseController extends Controller
         $data['updated'] = Carbon::now();
         $data['user_id'] = Auth::user()->id;
         $suffixe = "";
+        $data['slug'] = preg_replace("/[+]/", "plus", $data['title']);
         do{
-            $data['slug']=Str::slug($data['title'],'-') . $suffixe;
+            $data['slug']=Str::slug($data['title'],'-') . ($suffixe == '' ? "" : "-") . $suffixe;
             $exist = Course::where('slug', $data['slug'])->first();
             if($exist != null) {
                 if ($suffixe == "") {
