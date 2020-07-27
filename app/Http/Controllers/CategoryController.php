@@ -18,10 +18,10 @@ class CategoryController extends Controller
     public function insert(CategoryRequest $request)
     {   
        // dd($request->all());
-       $data=$request->all();
+       $data=$request->all(); 
        $suffixe = "";
         do{
-            $data['slug']=Str::slug($data['name'],'-') . ($suffixe == '' ? "" : "-") . $suffixe;
+            $data['slug']=Str::slug($data['name'],'-') . ($suffixe == '' ? "" : "-") . $suffixe; 
             $exist = Category::where('slug', $data['slug'])->first();
             if($exist != null) {
                 if ($suffixe == "") {

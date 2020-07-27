@@ -8,7 +8,9 @@
             <input type="submit" value="Supprimer" onclick="return confirm('Confirmez-vous la suppression de cette catégorie?');">
         </form>
            @endif 
-            @include('categories.tree-list',['categories'=> $category->children,])
+            @include('categories.tree-list',['categories'=> $category->children,])<br>
+
+            <a href="/stage/stage-claire-geremi-laravel/public/category/create">Ajouter une catégorie</a> 
                  
         </li> 
     @endforeach
