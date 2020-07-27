@@ -1,3 +1,4 @@
+
 <ul>
     @foreach ($categories as $category)
         <li> {{$category->name}} <a href="{{url('/category/edit/'.$category->id)}}">Modifier</a>
@@ -9,9 +10,7 @@
         </form>
            @endif 
             @include('categories.tree-list',['categories'=> $category->children,])<br>
-
-            <a href="/stage/stage-claire-geremi-laravel/public/category/create">Ajouter une catégorie</a> 
-                 
         </li> 
     @endforeach
   </ul>
+ 
