@@ -21,7 +21,7 @@ class CategoryController extends Controller
        $data=$request->all();
        $suffixe = "";
         do{
-            $data['slug']=Str::slug($data['title'],'-') . $suffixe;
+            $data['slug']=Str::slug($data['name'],'-') . ($suffixe == '' ? "" : "-") . $suffixe;
             $exist = Category::where('slug', $data['slug'])->first();
             if($exist != null) {
                 if ($suffixe == "") {
