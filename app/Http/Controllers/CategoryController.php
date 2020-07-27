@@ -10,6 +10,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 class CategoryController extends Controller
 {
+    public function __construct()
+    {
+        // parent::__construct();
+        $this->middleware('auth',['except' => ['checkLogin']]);
+        $this->middleware('admin',['except' => ['frontView', 'frontViewList']]);
+    }
+
     public function create()
     {
         $categories = Category::whereNull("category_id")->orderBy('name')->get();

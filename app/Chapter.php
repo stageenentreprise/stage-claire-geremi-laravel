@@ -10,4 +10,9 @@ class Chapter extends Model
         'id', 'part_id', 'title', 'numero', 'video', 'content'
     ];
     public $timestamps = false;
+
+    public function part()
+    {
+        return $this->belongsTo('App\Part');
+    }
 }

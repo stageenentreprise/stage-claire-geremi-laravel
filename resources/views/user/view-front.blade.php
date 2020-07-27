@@ -4,7 +4,7 @@
 @section('content')
 
 
-
+{{-- Menu de navigation --}}
 <div id="formation" class="text-center">
     <h1>{{$course->title}}</h1>
     <p>{{$course->description}}</p>
@@ -18,11 +18,16 @@
 @endforeach
 
 <div class="container border border-success text-center" >
-{{$partNumero}}
-Titre de la partie : {{$course->parts[$partNumero - 1]->title}} <br>
-Description de la partie : {{$course->parts[$partNumero - 1]->description}} <br>
-Titre du chapitre : {{$course->parts[$partNumero - 1]->chapters[$chapterNumero - 1]->title}} <br>
-{{!! $course->parts[$partNumero - 1]->chapters[$chapterNumero - 1]->content !!}}
+{{$chapter->part->numero}}
+<h1>Titre de la partie : {{$chapter->part->title}} </h1>
+Description de la partie : {{$chapter->part->description}} <br>
+Titre du chapitre : {{$chapter->title}} <br>
+@if ($chapter->video)
+    <video controls width="95%" height="35vh">
+        <source src="{{url('/chapter/video/'.$chapter->id)}}">
+    </video>    
+@endif
+{{!! $chapter->content !!}}
 
     
     

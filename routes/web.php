@@ -35,7 +35,7 @@ Auth::routes();
 Route::get('/category/consultation/{slug}', 'CategoryController@frontView')->name('view_front_categories'); //catégories utilisateur
 Route::get('/categories/liste', 'CategoryController@frontViewList')->name('view_front_list_categories');
 Route::get('/formations', 'CourseController@frontView')->name('view_front_courses');
-Route::get('/formation/{slug}/{partnumero}/{chapternumero}', 'CourseController@frontViewCourse')->name('view_front_course');
+Route::get('/formation/{slug}/{chapterid}', 'CourseController@frontViewCourse')->name('view_front_course');
 
 Route::get('/dashboard', 'DashboardController@index')->name('view_dashboard');
 
@@ -70,3 +70,4 @@ Route::post('/part/update/{id}', 'PartController@update')->name('part_update');
 Route::get('/part/view/{id}', 'PartController@view')->name('part_view');
 
 Route::post('/chapter/{id}/insert', 'PartController@insertchapter')->name('chapter_insert');
+Route::get('/chapter/video/{id}', 'PartController@video')->name('video');

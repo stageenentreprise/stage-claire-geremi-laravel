@@ -11,6 +11,7 @@ use App\Part;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use PhpParser\Node\Stmt\TryCatch;
 
 class PartController extends Controller
 {
@@ -113,12 +114,36 @@ class PartController extends Controller
         }
         $data = $request->all();
         $data['user_id'] = Auth::user()->id;
+        if ($request->hasFile('video')) {
+            $data['video'] = true;
+        }
         $data['part_id'] = $part->id;
+        $chapter = Chapter::create($data);
+
+        if ($request->hasFile('video')) {
         $video = $request->file('video');
-        $name = $part->id.".mp4";
+        $name = $chapter->id.".mp4";
         $destinationPath = storage_path('/videos');
         $video->move($destinationPath, $name);
-        Chapter::create($data);
+        }
+
         return redirect('/part/view/'.$part->id);
+    }
+
+    public function video($id) {
+        try {
+            $chapter = Chapter::findOrFail($id);
+            
+        } catch (\Exception $e) {
+            return 'Chapitre non trouvé';
+        }
+
+        if ($chapter->video) {
+            $destinationPath = storage_path('videos');
+            $file = $destinationPath . '/' . $chapter->id . '.mp4';
+            return response()->download($file);
+        }else {
+            return 'Cette vidéo n\'existe pas';
+        }
     }
 }

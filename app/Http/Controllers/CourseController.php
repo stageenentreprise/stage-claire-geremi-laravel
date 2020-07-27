@@ -19,7 +19,7 @@ use PhpParser\Node\Stmt\TryCatch;
 class CourseController extends Controller
 {
     public function create() {
-        $tier = 0;
+        $tier = 0; //idée : afficher le tier d'une catégorie
         $separateur = "";
         $title = "Create a course";
         $categories = Category::whereNull("category_id")->orderBy('name')->get();
@@ -61,17 +61,9 @@ class CourseController extends Controller
             return "Erreur";
         }
         $categories = Category::whereNull("category_id")->get();
-        $parts = Part::orderBy('numero')->get();
-        $chapters = Chapter::orderBy('numero')->get();
-        $comments = Comment::orderBy('updated_at', 'desc')->get();
-        $users = User::orderBy('name')->get();
         return view("course.view")
         ->withCourse($course)
         ->withCategories($categories)
-        ->withParts($parts)
-        ->withChapters($chapters)
-        ->withComments($comments)
-        ->withUsers($users)
         ;
     }
 
@@ -126,17 +118,20 @@ class CourseController extends Controller
         ;
     }
 
-    public function frontViewCourse($slug, $partnumero, $chapternumero) {
+    public function frontViewCourse($slug, $chapterid) {
         try {
             // $course = Course::findOrFail($id);
-            $course = Course::where('slug', $slug)->first();
+            // $course = Course::where('slug', $slug)->first();
+            $chapter = Chapter::findOrFail($chapterid);
         } catch (\Exception $e) {
             return "Formation introuvable";
         }
         return view("user.view-front")
-        ->withCourse($course)
-        ->withPartNumero($partnumero)
-        ->withChapterNumero($chapternumero)
+        ->withCourse($chapter->part->course)
+        ->withChapter($chapter)
+        // ->withCourse($course)
+        // ->withPartNumero($partnumero)
+        // ->withChapterNumero($chapternumero)
         ;
     }
     
