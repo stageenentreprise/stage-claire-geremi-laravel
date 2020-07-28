@@ -21,7 +21,7 @@
             <input type="text" class="form-control" id="exampleFormControlInput1" name="courseid" value="{{ $part->course_id }}" required>
             </form>
             <a href="{{url('/part/edit/'.$part->id)}}" class="btn btn-primary">Modifier</a> </h5>
-            @foreach ($course->chapters as $chapter)
+            @foreach ($part->chapters as $chapter)
                 <h5>{{$chapter->numero}}  {{$chapter->title}}</h5>
             @endforeach
         @endforeach
@@ -38,10 +38,11 @@
 <div class="card text-center" style="width: 18rem;">
     <div class="card-body col text-center">
         <h3 class="card-title">Commentaires</h3><br>
-        @foreach ($comments as $comment)
+        @foreach ($course->$comments as $comment)
             <h5> @foreach ($users as $user)
                 {{$user->name}}
-            @endforeach {{$comment->content}} {{$comment->rate}} </h5>
+                {{$comment->content}} {{$comment->rate}}
+            @endforeach  </h5>
         @endforeach
         
     </div>

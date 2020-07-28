@@ -1,6 +1,7 @@
 @extends('master')
 
 @section('content')
+
     
 @foreach ($courses as $course)
 
@@ -16,7 +17,7 @@
             <h5>{{$part->numero}}. {{$part->title}}</h5>
         @endforeach
         <div class="col text-center">
-            <a href="{{url('/formation/'.$course->slug.'/1/1')}}" class="card-link col text-center btn btn-secondary">Consulter</a>
+            <a href="{{url('/formation/'.$course->slug )}}" class="card-link col text-center btn btn-secondary">Consulter {{$chapter}}</a>
         </div><br>
     </div>
 </div>

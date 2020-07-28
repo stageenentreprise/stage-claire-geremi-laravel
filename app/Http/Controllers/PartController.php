@@ -15,6 +15,12 @@ use PhpParser\Node\Stmt\TryCatch;
 
 class PartController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth',['except' => ['checkLogin']]);
+        $this->middleware('admin',['except' => ['view', 'video']]);
+    }
+
     public function create($course_id) {
         try {
             $course_id = Course::findOrFail($course_id);

@@ -13,11 +13,16 @@ class Course extends Model
 
     public function parts()
     {
-        return $this->hasMany('App\Part');
+        return $this->hasMany('App\Part')->orderBy('numero');
     }
 
     public function chapters()
     {
         return $this->hasMany('app\Chapter');
+    }
+
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
     }
 }

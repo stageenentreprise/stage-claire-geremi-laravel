@@ -8,14 +8,16 @@
 <div id="formation" class="text-center">
     <h1>{{$course->title}}</h1>
     <p>{{$course->description}}</p>
-</div>
+
 @foreach ($course->parts as $part)
-    Partie {{$part->numero}} : {{$part->title}} <br>
+    <button> Partie {{$part->numero}} : {{$part->title}} <br> </button>
     @foreach ($part->chapters as $chapter)
-        Chapitre {{$chapter->numero}} : {{$chapter->title}} <br> 
+    <a href="{{url('/formation/slapslap/'.$chapter->id )}}"> Chapitre {{$chapter->numero}} : {{$chapter->title}} </a> <br> 
     @endforeach
     <br>
 @endforeach
+
+</div>
 
 <div class="container border border-success text-center" >
 {{$chapter->part->numero}}

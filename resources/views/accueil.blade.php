@@ -5,8 +5,7 @@
 <div class="container">
 
     <!-- Page Heading -->
-    <h1 class="my-4">Suivez nos formations en ligne
-    </h1>
+    <h1 class="my-4">Suivez nos formations en ligne</h1>
   
     <div class="row">
       <div class="col-lg-4 col-sm-6 mb-4">
@@ -14,7 +13,7 @@
           <a href="#"><img width="700" height="250" class="card-img-top" src="/stage/stage-claire-geremi-laravel/resources/images/html.jpg" alt=""></a>
           <div class="card-body">
             <h4 class="card-title">
-              <a href="/stage/stage-claire-geremi-laravel/public/category/consultation/htmlcss".>HTML/CSS</a>
+              <a href="{{url('/stage/stage-claire-geremi-laravel/public/category/consultation/')}}">HTML/CSS</a>
             </h4>
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
           </div>

@@ -14,10 +14,18 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use PhpParser\Node\Stmt\Else_;
 use PhpParser\Node\Stmt\TryCatch;
 
 class CourseController extends Controller
 {
+    public function __construct()
+    {
+        // parent::__construct();
+        $this->middleware('auth',['except' => ['checkLogin']]);
+        $this->middleware('admin',['except' => ['frontView', 'frontViewCourse']]);
+    }
+
     public function create() {
         $tier = 0; //idée : afficher le tier d'une catégorie
         $separateur = "";
@@ -113,8 +121,10 @@ class CourseController extends Controller
 
     public function frontView() {
         $courses = Course::all();
+        // $chapter = Chapter::where('numero', '1');
         return view("user.courses")
         ->withCourses($courses)
+        ->withChapter($chapter)
         ;
     }
 
@@ -133,6 +143,18 @@ class CourseController extends Controller
         // ->withPartNumero($partnumero)
         // ->withChapterNumero($chapternumero)
         ;
+    }
+
+    public function frontPreviewCourse($slug) {
+        $course = Course::where("slug",$slug)->first();
+        if ($course == null) {
+            return "Aucune formation correspond à ce nom";
+        }
+        return view("course.preview")
+        ->withCourse($course)
+        ;
+            
+
     }
     
 }
