@@ -10,10 +10,10 @@
     <div class="row">
       <div class="col-lg-4 col-sm-6 mb-4">
         <div class="card h-100">
-          <a href="#"><img width="700" height="250" class="card-img-top" src="/stage/stage-claire-geremi-laravel/resources/images/html.jpg" alt=""></a>
+          <a href="{{url('/category/consultation/htmlcss')}}"><img width="700" height="250" class="card-img-top" src="{{url('/images/catégories/html.png')}}" alt=""></a>
           <div class="card-body">
             <h4 class="card-title">
-              <a href="{{url('/stage/stage-claire-geremi-laravel/public/category/consultation/')}}">HTML/CSS</a>
+              <a href="{{url('/category/consultation/htmlcss')}}">HTML/CSS</a>
             </h4>
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
           </div>
@@ -21,10 +21,10 @@
       </div>
       <div class="col-lg-4 col-sm-6 mb-4">
         <div class="card h-100">
-          <a href="#"><img width="700" height="250" class="card-img-top" src="/stage/stage-claire-geremi-laravel/resources/images/javascript.png" alt=""></a>
+          <a href="{{url('/category/consultation/javascript')}}"><img width="700" height="250" class="card-img-top" src="{{url('/images/catégories/javascript.png')}}" alt=""></a>
           <div class="card-body">
             <h4 class="card-title">
-              <a href="/stage/stage-claire-geremi-laravel/public/category/consultation/javascript">JavaScript</a>
+              <a href="{{url('/category/consultation/javascript')}}">JavaScript</a>
             </h4>
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
           </div>
@@ -32,10 +32,10 @@
       </div>
       <div class="col-lg-4 col-sm-6 mb-4">
         <div class="card h-100">
-          <a href="#"><img width="700" height="250" class="card-img-top" src="/stage/stage-claire-geremi-laravel/resources/images/php.jfif" alt=""></a>
+          <a href="{{url('/category/consultation/php')}}"><img width="700" height="250" class="card-img-top" src="{{url('/images/catégories/php.png')}}" alt=""></a>
           <div class="card-body">
             <h4 class="card-title">
-              <a href="/stage/stage-claire-geremi-laravel/public/category/consultation/php">PHP</a>
+              <a href="{{url('/category/consultation/php')}}">PHP</a>
             </h4>
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
           </div>
@@ -43,10 +43,10 @@
       </div>
       <div class="col-lg-4 col-sm-6 mb-4">
         <div class="card h-100">
-          <a href="#"><img width="700" height="250" class="card-img-top" src="/stage/stage-claire-geremi-laravel/resources/images/c.png" alt=""></a>
+          <a href="{{url('/category/consultation/c')}}"><img width="700" height="250" class="card-img-top" src="{{url('/images/catégories/c.png')}}" alt=""></a>
           <div class="card-body">
             <h4 class="card-title">
-              <a href="/stage/stage-claire-geremi-laravel/public/category/consultation/c">C</a>
+              <a href="{{url('/category/consultation/c')}}">C</a>
             </h4>
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
           </div>
@@ -54,10 +54,10 @@
       </div>
       <div class="col-lg-4 col-sm-6 mb-4">
         <div class="card h-100">
-          <a href="#"><img width="700" height="250" class="card-img-top" src="/stage/stage-claire-geremi-laravel/resources/images/c++.png" alt=""></a>
+          <a href="{{url('/category/consultation/cpp')}}"><img width="700" height="250" class="card-img-top" src="{{url('/images/catégories/c++.png')}}" alt=""></a>
           <div class="card-body">
             <h4 class="card-title">
-              <a href="/stage/stage-claire-geremi-laravel/public/category/consultation/cpp">C++</a>
+              <a href="{{url('/category/consultation/c-2')}}">C++</a>
             </h4>
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
           </div>
@@ -65,10 +65,10 @@
       </div>
       <div class="col-lg-4 col-sm-6 mb-4">
         <div class="card h-100">
-          <a href="#"><img width="700" height="250" class="card-img-top" src="/stage/stage-claire-geremi-laravel/resources/images/ruby.png" alt=""></a>
+          <a href="{{url('/category/consultation/ruby')}}"><img width="700" height="250" class="card-img-top" src="{{url('/images/catégories/ruby.png')}}" alt=""></a>
           <div class="card-body">
             <h4 class="card-title">
-              <a href="/stage/stage-claire-geremi-laravel/public/category/consultation/ruby">Ruby</a>
+              <a href="{{url('/category/consultation/ruby')}}">Ruby</a>
             </h4>
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
           </div>
