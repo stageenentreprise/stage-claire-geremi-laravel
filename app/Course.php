@@ -16,6 +16,11 @@ class Course extends Model
         return $this->hasMany('App\Part')->orderBy('numero');
     }
 
+    public function firstPart()
+    {
+        return $this->hasMany('App\Part')->orderBy('numero')->first();
+    }
+
     public function chapters()
     {
         return $this->hasMany('app\Chapter');

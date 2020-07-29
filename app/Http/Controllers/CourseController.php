@@ -122,10 +122,12 @@ class CourseController extends Controller
 
     public function frontView() {
         $courses = Course::all();
-        // $chapter = Chapter::where('numero', '1');
+        $chapters = Chapter::all();
+        $firstPart = Course::all()->firstPart();
         return view("user.courses")
         ->withCourses($courses)
-        ->withChapter($chapter)
+        ->withChapters($chapters)
+        ->withFirstPart($firstPart)
         ;
     }
 

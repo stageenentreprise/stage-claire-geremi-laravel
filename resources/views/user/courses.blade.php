@@ -15,9 +15,18 @@
         @foreach ($course->parts as $part)
         @csrf
             <h5>{{$part->numero}}. {{$part->title}}</h5>
-        @endforeach
+        
         <div class="col text-center">
-            <a href="{{url('/formation/'.$course->slug )}}" class="card-link col text-center btn btn-secondary">Consulter {{$chapter}}</a>
+            {{-- @foreach ($part->chapters as $chapter) --}}
+                <a href="{{url('/formation/'.$course->slug )}}" class="card-link col text-center btn btn-secondary">Consulter </a>
+            {{-- @endforeach --}}
+        @endforeach
+        {{-- {{$course->firstPart()}} --}}
+        {{-- {{dd ( $course->firstPart() ) }} --}}
+        {{-- {{$course->firstPart->firstChapter()}} --}}
+        {{-- {{ ( $course->firstPart() )->firstChapter() }} --}}
+        {{-- {{$part->firstChapter()}} --}}
+        {{$firstPart}}
         </div><br>
     </div>
 </div>

@@ -16,6 +16,11 @@ class Part extends Model
         return $this->hasMany('App\Chapter')->orderBy('numero');
     }
 
+    public function firstChapter()
+    {
+        return $this->hasMany('App\Chapter')->orderBy('numero')->first();
+    }
+
     public function course()
     {
         return $this->belongsTo('App\Course');
