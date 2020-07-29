@@ -28,13 +28,16 @@
                 </li> --}}
                 <div class="dropdown show">
                   <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown link
+                    Catégories
                   </a>
                 
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <a class="dropdown-item" href="{{url('/category/consultation/htmlcss')}}">HTML/CSS</a>
+                    <a class="dropdown-item" href="{{url('/category/consultation/javascript')}}">JavaScript</a>
+                    <a class="dropdown-item" href="{{url('/category/consultation/php')}}">PHP</a>
+                    <a class="dropdown-item" href="{{url('/category/consultation/c')}}">C</a>
+                    <a class="dropdown-item" href="{{url('/category/consultation/c-2')}}">C++</a>
+                    <a class="dropdown-item" href="{{url('/category/consultation/ruby')}}">Ruby</a>
                   </div>
                 </div>
                 <li class="nav-item">
