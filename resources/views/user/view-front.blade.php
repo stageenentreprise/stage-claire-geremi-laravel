@@ -25,7 +25,7 @@
 Description de la partie : {{$chapter->part->description}} <br>
 Titre du chapitre : {{$chapter->title}} <br>
 @if ($chapter->video)
-    <video controls width="95%" height="35vh">
+    <video controls >
         <source src="{{url('/chapter/video/'.$chapter->id)}}">
     </video>    
 @endif
