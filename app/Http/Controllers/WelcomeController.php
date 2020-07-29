@@ -9,7 +9,7 @@ class WelcomeController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth'); NE JAMAIS METTRE LE MIDDLEWARE AUTH ICI
         $this->middleware('categories.share');
     }
 
