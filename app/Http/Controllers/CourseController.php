@@ -24,6 +24,7 @@ class CourseController extends Controller
         // parent::__construct();
         $this->middleware('auth',['except' => ['checkLogin']]);
         $this->middleware('admin',['except' => ['frontView', 'frontViewCourse']]);
+        $this->middleware('categories.share');
     }
 
     public function create() {

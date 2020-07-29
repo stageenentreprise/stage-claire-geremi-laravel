@@ -11,6 +11,7 @@ class DashboardController extends Controller
         // parent::__construct();
         $this->middleware('auth',['except' => ['checkLogin']]);
         $this->middleware('admin');
+        $this->middleware('categories.share');
     }
 
     public function index() {

@@ -19,6 +19,7 @@ class PartController extends Controller
     {
         $this->middleware('auth',['except' => ['checkLogin']]);
         $this->middleware('admin',['except' => ['view', 'video']]);
+        $this->middleware('categories.share');
     }
 
     public function create($course_id) {

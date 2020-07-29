@@ -15,6 +15,7 @@ class CategoryController extends Controller
         // parent::__construct();
         $this->middleware('auth',['except' => ['checkLogin']]);
         $this->middleware('admin',['except' => ['frontView', 'frontViewList']]);
+        $this->middleware('categories.share');
     }
 
     public function create()

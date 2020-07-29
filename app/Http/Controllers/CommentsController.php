@@ -11,6 +11,12 @@ use Illuminate\Support\Facades\Auth;
 
 class CommentsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('categories.share');
+    }
+
     public function create($course_id) {
         try {
             $course = Course::findOrFail($course_id);

@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class WelcomeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('categories.share');
+    }
+
     public function index() {
         $html = Category::where('slug', 'htmlcss')->get();
 

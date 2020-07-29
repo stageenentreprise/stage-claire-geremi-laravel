@@ -31,13 +31,10 @@
                     Catégories
                   </a>
                 
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="{{url('/category/consultation/htmlcss')}}">HTML/CSS</a>
-                    <a class="dropdown-item" href="{{url('/category/consultation/javascript')}}">JavaScript</a>
-                    <a class="dropdown-item" href="{{url('/category/consultation/php')}}">PHP</a>
-                    <a class="dropdown-item" href="{{url('/category/consultation/c')}}">C</a>
-                    <a class="dropdown-item" href="{{url('/category/consultation/c-2')}}">C++</a>
-                    <a class="dropdown-item" href="{{url('/category/consultation/ruby')}}">Ruby</a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      @foreach ($rootCategories as $category)
+                          <a class="dropdown-item" href="{{url('/category/consultation/'. $category->slug)}}">{{$category->name}}</a>
+                      @endforeach
                   </div>
                 </div>
                 <li class="nav-item">

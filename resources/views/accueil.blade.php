@@ -1,6 +1,7 @@
 @extends('master')
 
 @section('content')
+
     <h2>Bienvenue</h2>
 <div class="container">
 
