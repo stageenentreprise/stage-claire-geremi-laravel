@@ -1,16 +1,19 @@
-<h2>Laissez un commentaire:</h2>
+@extends('master')
+
+@section('content')
 
 <form method="POST" action="{{url('/comment/'.$course->id.'/insert')}}">
   
   @csrf
-
-  {{-- <div class="rating"><!--
---><a href="#5" title="Donner 5 étoiles">☆</a><!--
---><a href="#4" title="Donner 4 étoiles">☆</a><!--
---><a href="#3" title="Donner 3 étoiles">☆</a><!--
---><a href="#2" title="Donner 2 étoiles">☆</a><!--
---><a href="#1" title="Donner 1 étoile">☆</a>
-  </div> --}}
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Laisser un commentaire</h5>
+            <hr class="style1"><br>
+            <form class="form-signin">
+              
   <select name="rate">
     <option value="5">☆☆☆☆☆</option>
     <option value="4">☆☆☆☆</option>
@@ -18,26 +21,19 @@
     <option value="2">☆☆</option>
     <option value="1">☆</option>
   </select>
+  <hr class="style1"><br>
 
-  
-   <textarea name="content" rows="10" cols="100" placeholder="Votre commentaire..."></textarea><br />
+  <div class="form-group">
+   <textarea class="form-control" name="content" rows="3" placeholder="Votre commentaire..."></textarea><br />
+   <hr class="style1"><br>
    <input type="submit" value="Poster mon commentaire" name="submit_commentaire"/>
-
+  </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </form>
 
-
-
-{{--CSS DU RATING .rating a {
-  float: right;
-  color: #aaa;
-  text-decoration: none;
-  font-size: 3em;
-  transition: color .4s;
-}
-.rating a:hover,
-.rating a:focus,
-.rating a:hover ~ a,
-.rating a:focus ~ a {
-  color: orange;
-  cursor: pointer;
-} --}}
+@endsection
