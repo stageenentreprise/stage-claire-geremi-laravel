@@ -56,8 +56,8 @@
                         </form>
                     </li>
                 @else
-                    <li><a class="navbar-brand" href="/stage/stage-claire-geremi-laravel/public/register">INSCRIPTION</a></li>
-                    <li><a class="navbar-brand" href="/stage/stage-claire-geremi-laravel/public/login">CONNEXION</a></li>
+                    <li><a class="navbar-brand" href="{{url('/register')}}">INSCRIPTION</a></li>
+                    <li><a class="navbar-brand" href="{{url('/login')}}">CONNEXION</a></li>
                 @endif
             </ul>
         </nav>
@@ -67,6 +67,7 @@
     @yield('content')
 
     @yield('footer')
+  
     
     @yield('scripts')
     

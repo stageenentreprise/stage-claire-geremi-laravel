@@ -26,7 +26,7 @@
         {{-- {{$course->firstPart->firstChapter()}} --}}
         {{-- {{ ( $course->firstPart() )->firstChapter() }} --}}
         {{-- {{$part->firstChapter()}} --}}
-        {{$firstPart}}
+        {{-- {{$firstPart}} --}}
         </div><br>
     </div>
 </div>

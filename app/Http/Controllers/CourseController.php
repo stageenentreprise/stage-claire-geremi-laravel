@@ -123,11 +123,11 @@ class CourseController extends Controller
     public function frontView() {
         $courses = Course::all();
         $chapters = Chapter::all();
-        $firstPart = Course::all()->firstPart();
+        // $firstPart = Course::all()->firstPart();
         return view("user.courses")
         ->withCourses($courses)
         ->withChapters($chapters)
-        ->withFirstPart($firstPart)
+        // ->withFirstPart($firstPart)
         ;
     }
 
