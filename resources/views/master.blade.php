@@ -14,13 +14,15 @@
 </head>
 <body>
     <header>
-        
+
         <nav class="navbar navbar-expand navbar-dark bg-dark">
-            <a class="navbar-brand" href="{{url('/')}}">Home</a>
+            <a class="navbar-brand" href="#">
+                <img src="{{ url('/images/formacitron.png') }}" alt="logo formacitron - formations pour gens pressés">
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-      
+
             <div class="collapse navbar-collapse" id="navbarsExample02">
               <ul class="navbar-nav mr-auto">
                 {{-- <li class="nav-item active">
@@ -30,7 +32,7 @@
                   <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Catégories
                   </a>
-                
+
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       @foreach ($rootCategories as $category)
                           <a class="dropdown-item" href="{{url('/category/consultation/'. $category->slug)}}">{{$category->name}}</a>
@@ -67,9 +69,9 @@
     @yield('content')
 
     @yield('footer')
-  
-    
+
+
     @yield('scripts')
-    
+
 </body>
 </html>
