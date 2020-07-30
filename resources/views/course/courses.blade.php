@@ -3,7 +3,7 @@
 
 @section('content')
     
-<a href="/stage/stage-claire-geremi-laravel/public/course/create">Ajouter une formation</a> <br>
+<a href="{{url('/stage/stage-claire-geremi-laravel/public/course/create')}}">Ajouter une formation</a> <br>
 @foreach ($courses as $course)
 
     <div class="card text-center float-left" style="width: 18rem;">
