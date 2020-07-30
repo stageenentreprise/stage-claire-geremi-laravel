@@ -30,7 +30,10 @@ use App\Category;
     <a href="/stage/stage-claire-geremi-laravel/public/category/consultation/{{$category->slug}}">{{ $category->name }}</a>
     @endforeach
 
+<img class="mx-auto d-block" src="{{url('/images/categories/'.$currentCategory2->slug.'.png')}}">
+
 <br><br><h2 class="text-center">Liste des formations relatives à la catégorie {{$currentCategory2->name}}</h2>
+
     @foreach ($courses as $course)
     <div class="card text-center float-left" style="width: 18rem; margin: 1rem;">
         <div class="card-body col text-center">
