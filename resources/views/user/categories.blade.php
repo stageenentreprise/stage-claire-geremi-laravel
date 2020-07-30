@@ -19,7 +19,7 @@ use App\Category;
         $currentCategoryUpdate = Category::findOrFail($currentCategoryUpdate->category_id);
         // echo $currentCategoryUpdate->name;
         // echo '<li class="breadcrumb-item"><a href=""</a>' . $currentCategoryUpdate->name . '</a></li>';
-        echo '<li class="breadcrumb-item"><a href="/stage/stage-claire-geremi-laravel/public/category/consultation/' ?>{{$currentCategoryUpdate->slug}} <?php echo '"</a>' . $currentCategoryUpdate->name . '</a></li>';
+        echo '<li class="breadcrumb-item">'?><a href="{{url('/category/consultation/'. $currentCategoryUpdate->slug)}} <?php echo '"</a>' . $currentCategoryUpdate->name . '</a></li>';
         
     } 
     echo '<li class="breadcrumb-item active"><a href="">' . $currentCategory2->name . '</a></li></ol></nav>';
@@ -27,7 +27,7 @@ use App\Category;
 ?>
 {{-- {{ $currentCategory2->name }} <br> --}}
     @foreach ($currentCategory2->children as $category)
-    <a href="/stage/stage-claire-geremi-laravel/public/category/consultation/{{$category->slug}}">{{ $category->name }}</a>
+    <a href="{{url('/category/consultation/'.$category->slug)}}">{{ $category->name }}</a>
     @endforeach
 
 <img class="mx-auto d-block" src="{{url('/images/categories/'.$currentCategory2->slug.'.png')}}">

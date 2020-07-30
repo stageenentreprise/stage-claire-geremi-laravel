@@ -134,7 +134,7 @@ class PartController extends Controller
         $video->move($destinationPath, $name);
         }
 
-        return redirect('/part/view/'.$part->id);
+        return redirect('/courses');
     }
 
     public function video($id) {

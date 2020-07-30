@@ -3,7 +3,7 @@
 
 @section('content')
     
-<a href="/stage/stage-claire-geremi-laravel/public/course/create">Ajouter une formation</a> <br>
+<a href="{{url('/stage/stage-claire-geremi-laravel/public/course/create')}}">Ajouter une formation</a> <br>
 @foreach ($courses as $course)
 
     <div class="card text-center float-left" style="width: 18rem;">
@@ -21,12 +21,15 @@
                 <input type="text" class="form-control" id="exampleFormControlInput1" name="courseid" value="{{ $part->course_id }}" required>
                 </form>
                 <a href="{{url('/part/edit/'.$part->id)}}" class="btn btn-primary">Modifier</a> </h5>
+                <div class="col text-center">
+                {{-- @foreach ($course->parts->chapters as $chapter)
+                    {{$chapter}}
+                @endforeach --}}
+                <a href="{{url('/part/'.$part->id.'/addchapter')}}" class="card-link col text-center btn btn-secondary">Ajouter un chapitre</a>
+                </div><br>
             @endforeach
             <div class="col text-center">
                 <a href="{{url('/part/'.$course->id.'/create')}}" class="card-link col text-center btn btn-secondary">Ajouter une partie</a>
-            </div><br>
-            <div class="col text-center">
-                <a href="{{url('/part/'.$course->id.'/addchapter')}}" class="card-link col text-center btn btn-secondary">Ajouter un chapitre</a>
             </div><br>
             <div class="row">
                 <a href="{{url('/course/edit/'.$course->id)}}" class="card-link col text-center btn btn-primary">Modifier la formation</a>
