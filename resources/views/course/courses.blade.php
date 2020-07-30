@@ -21,12 +21,12 @@
                 <input type="text" class="form-control" id="exampleFormControlInput1" name="courseid" value="{{ $part->course_id }}" required>
                 </form>
                 <a href="{{url('/part/edit/'.$part->id)}}" class="btn btn-primary">Modifier</a> </h5>
+                <div class="col text-center">
+                <a href="{{url('/part/'.$part->id.'/addchapter')}}" class="card-link col text-center btn btn-secondary">Ajouter un chapitre</a>
+                </div><br>
             @endforeach
             <div class="col text-center">
                 <a href="{{url('/part/'.$course->id.'/create')}}" class="card-link col text-center btn btn-secondary">Ajouter une partie</a>
-            </div><br>
-            <div class="col text-center">
-                <a href="{{url('/part/'.$course->id.'/addchapter')}}" class="card-link col text-center btn btn-secondary">Ajouter un chapitre</a>
             </div><br>
             <div class="row">
                 <a href="{{url('/course/edit/'.$course->id)}}" class="card-link col text-center btn btn-primary">Modifier la formation</a>

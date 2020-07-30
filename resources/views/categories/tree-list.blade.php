@@ -1,5 +1,5 @@
 
-<ul class="list-group list-group-horizontal">
+<ul class="list-group">
     @foreach ($categories as $category)
         <li class="list-group-item"> {{$category->name}} <button type="button" class="btn btn-outline-warning btn-sm"><a href="{{url('/category/edit/'.$category->id)}}">Modifier</a></button>
            @if(count($category->courses)==0 && count($category->children)==0)
