@@ -22,6 +22,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'WelcomeController@index')->name('welcome');
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 
 Route::get('/category/consultation/{slug}', 'CategoryController@frontView')->name('view_front_categories'); //catégories utilisateur
 Route::get('/categories/liste', 'CategoryController@frontViewList')->name('view_front_list_categories');
