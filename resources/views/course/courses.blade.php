@@ -22,6 +22,9 @@
                 </form>
                 <a href="{{url('/part/edit/'.$part->id)}}" class="btn btn-primary">Modifier</a> </h5>
                 <div class="col text-center">
+                {{-- @foreach ($course->parts->chapters as $chapter)
+                    {{$chapter}}
+                @endforeach --}}
                 <a href="{{url('/part/'.$part->id.'/addchapter')}}" class="card-link col text-center btn btn-secondary">Ajouter un chapitre</a>
                 </div><br>
             @endforeach
