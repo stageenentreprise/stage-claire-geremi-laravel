@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('content')
-    @dd($categoryArray)
+    {{-- @dd($categoryArray) --}}
 
 <h2>Catégories</h2>
 
@@ -27,15 +27,16 @@ use App\Category;
 
     
 
-    @foreach ($categoryArray as $item)
+    {{-- @foreach ($categoryArray as $item)
         {{$item}}
-    @endforeach
+    @endforeach --}}
 
 <img class="mx-auto d-block" src="{{url('/images/categories/'.$currentCategory2->slug.'.png')}}">
 
 <br><br><h2 class="text-center">Liste des formations relatives à la catégorie {{$currentCategory2->name}}</h2>
 
-    @foreach($actualCategory->courses as $course)
+    {{-- @foreach($actualCategory->courses as $course) --}}
+    @foreach ($courses as $course)
     <div class="card text-center float-left" style="width: 18rem; margin: 1rem;">
         <div class="card-body col text-center">
             <h3 class="card-title">{{$course->title}}</h3><br>

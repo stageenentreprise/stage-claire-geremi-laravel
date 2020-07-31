@@ -6,7 +6,7 @@
 
 <form method="POST" action="{{url('category/insert')}}">
   @csrf
-  <div class="container">
+  <div class="container float-left">
     <div class="row">
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div class="card card-signin my-5">
@@ -28,6 +28,10 @@
       </div>
     </div>
   </div>
+
+  <label for="photo" class="float-left">Photo</label>
+        <input class="fullwidth @error("photo") error @enderror"  type="file" id="photo" name="photo">
+        @error("photo") <div class="text-big red">{{$message}}</div> @enderror
 </form>
 
 
