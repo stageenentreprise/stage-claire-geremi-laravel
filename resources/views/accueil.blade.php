@@ -1,84 +1,85 @@
 @extends('master')
 
+@section('head')
+  <link rel="stylesheet" href="{{url('css/one-page-wonder.css')}}">
+  <link rel="stylesheet" href="{{url('css/one-page-wonder.min.css')}}">
+@endsection
+
 @section('content')
 
-    <h2>Bienvenue</h2>
-<div class="container">
 
-    <!-- Page Heading -->
-    <h1 class="my-4">Suivez nos formations en ligne</h1>
-  
-    <div class="row">
-      <div class="col-lg-4 col-sm-6 mb-4">
-        <div class="card h-100">
-          <a href="{{url('/category/consultation/htmlcss')}}"><img width="700" height="250" class="card-img-top" src="{{url('/images/catégories/html.png')}}" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="{{url('/category/consultation/htmlcss')}}">HTML/CSS</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
+  <header class="masthead text-center text-white">
+    <div class="masthead-content">
+      <div class="container">
+        <h1 class="masthead-heading mb-0">FORMACITRON</h1>
+        <h2 class="masthead-subheading mb-0">Des formations courtes pour des gens pressés</h2>
+        <a href="#learnmore" class="btn btn-primary btn-xl rounded-pill mt-5">Learn More</a>
+      </div>
+    </div>
+    <div class="bg-circle-1 bg-circle"></div>
+    <div class="bg-circle-2 bg-circle"></div>
+    <div class="bg-circle-3 bg-circle"></div>
+    <div class="bg-circle-4 bg-circle"></div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 order-lg-2">
+          <div class="p-5">
+            <img class="img-fluid rounded-circle" src="{{url('images/accueil/coding.jpg')}}" alt="">
           </div>
         </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-4">
-        <div class="card h-100">
-          <a href="{{url('/category/consultation/javascript')}}"><img width="700" height="250" class="card-img-top" src="{{url('/images/catégories/javascript.png')}}" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="{{url('/category/consultation/javascript')}}">JavaScript</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-4">
-        <div class="card h-100">
-          <a href="{{url('/category/consultation/php')}}"><img width="700" height="250" class="card-img-top" src="{{url('/images/catégories/php.png')}}" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="{{url('/category/consultation/php')}}">PHP</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-4">
-        <div class="card h-100">
-          <a href="{{url('/category/consultation/c')}}"><img width="700" height="250" class="card-img-top" src="{{url('/images/catégories/c.png')}}" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="{{url('/category/consultation/c')}}">C</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-4">
-        <div class="card h-100">
-          <a href="{{url('/category/consultation/cpp')}}"><img width="700" height="250" class="card-img-top" src="{{url('/images/catégories/c++.png')}}" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="{{url('/category/consultation/c-2')}}">C++</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-4">
-        <div class="card h-100">
-          <a href="{{url('/category/consultation/ruby')}}"><img width="700" height="250" class="card-img-top" src="{{url('/images/catégories/ruby.png')}}" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="{{url('/category/consultation/ruby')}}">Ruby</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
+        <div class="col-lg-6 order-lg-1">
+          <div class="p-5">
+            <h2 id="learnmore" class="display-4">Neque porro quisquam est qui dolorem</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
           </div>
         </div>
       </div>
     </div>
-    <!-- /.row -->
-  
-  
-  </div>
-  <!-- /.container -->   
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="p-5">
+            <img class="img-fluid rounded-circle" src="{{url('images/accueil/moon.jpg')}}" alt="">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="p-5">
+            <h2 class="display-4">ipsum quia dolor sit amet,</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 order-lg-2">
+          <div class="p-5">
+            <img class="img-fluid rounded-circle" src="{{url('images/accueil/laptop.jpg')}}" alt="">
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <div class="p-5">
+            <h2 class="display-4">consectetur, adipisci velit...</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 @endsection
