@@ -18,6 +18,7 @@ class CreateCategoriesTable extends Migration
             $table->timestamps();
             $table->string('name');
             $table->string('slug')->unique();
+            $table->boolean('photo')->default(false);
             $table->bigInteger('category_id')->unsigned()->nullable();
             $table->foreign('category_id')
                 ->references('id')

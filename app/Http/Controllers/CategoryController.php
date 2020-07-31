@@ -39,7 +39,17 @@ class CategoryController extends Controller
                 }
             }
         } while($exist != null); 
-       $category=Category::create($data);
+        if ($request->hasFile('photo')) {
+            $data['photo'] = true;
+        }
+        $category=Category::create($data);
+        if ($request->hasFile('video')) {
+            $photo = $request->file('photo');
+            $name = $category->id.".png";
+            $destinationPath = url('/images/categories');
+            $photo->move($destinationPath, $name);
+        }
+       
         return redirect(url('category/create'));
     }
     public function categories()
