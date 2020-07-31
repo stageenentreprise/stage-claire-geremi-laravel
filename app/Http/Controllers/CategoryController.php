@@ -81,13 +81,14 @@ class CategoryController extends Controller
 
     public function frontView($slug) {
         $categories = Category::orderBy('name')->get();
-        $actualCategory = Category::where('slug', $slug)->get();
-        foreach ($actualCategory as $key) {
-            $courses = Course::where('category_id', '=', $key->id)->get();
+        $actualCategory = Category::where('slug', $slug)->first();
+        $categoryArray = array();
+        $currentCategoryUpdate = $actualCategory->replicate();
+        while ($currentCategoryUpdate != null) {
+            $currentCategoryUpdate = $currentCategoryUpdate->parent;
+            $currentCategoryUpdate->save();
+            array_push($categoryArray, $currentCategoryUpdate);
         }
-        // $courses = Course::where('category_id', '=', $actualCategory->id)->get();
-        // $owners = Owner::where('id', '>', 0)->orderBy('name', 'desc')->get(); 
-        // $currentCategory2 = Category::findOrFail($id);
         $currentCategory2 = Category::where('slug',$slug)->first();
         $separateur = "├─";
         return view("user.categories")
@@ -95,7 +96,7 @@ class CategoryController extends Controller
         ->withActualCategory($actualCategory)
         ->withCurrentCategory2($currentCategory2)
         ->withSeparateur($separateur)
-        ->withCourses($courses)
+        ->withCategoryArray($categoryArray)
         ;
     }
     public function frontViewList() {
