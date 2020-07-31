@@ -6,7 +6,7 @@
 
 
 
-<div class="card text-center" style="width: 18rem;">
+<div class="card text-center w-50 float-left">
     <div class="card-body col text-center">
         <h3 class="card-title">{{$course->title}}</h3><br>
         <h4 class="card-subtitle mb-2 text-muted">Description : </h4>
@@ -35,14 +35,14 @@
     </div>
 </div>
 
-<div class="card text-center" style="width: 18rem;">
+<div class="card text-center w-50 float-left">
     <div class="card-body col text-center">
         <h3 class="card-title">Commentaires</h3><br>
-        @foreach ($course->$comments as $comment)
-            <h5> @foreach ($users as $user)
-                {{$user->name}}
+        @foreach ($course->comments as $comment)
+            <h5> 
+                {{$comment->user->name}}
                 {{$comment->content}} {{$comment->rate}}
-            @endforeach  </h5>
+             </h5>
         @endforeach
         
     </div>

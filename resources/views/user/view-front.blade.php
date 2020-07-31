@@ -25,11 +25,13 @@
 Description de la partie : {{$chapter->part->description}} <br>
 Titre du chapitre : {{$chapter->title}} <br>
 @if ($chapter->video)
-    <video controls >
+<div class="embed-responsive embed-responsive-16by9">
+    <video controls class="embed-responsive-item" allowfullscreen max-width: 100%>
         <source src="{{url('/chapter/video/'.$chapter->id)}}">
-    </video>    
+    </video>  
+</div>
 @endif
-{{!! $chapter->content !!}}
+{!! $chapter->content !!}
 
     
     
@@ -38,7 +40,13 @@ Titre du chapitre : {{$chapter->title}} <br>
 
 <div class="row">
     <div class="col text-center">
-        <a href="{{url("/formations")}}">Liste des formations</a>
+        <a href="{{url('/formations')}}">Liste des formations</a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col text-center">
+        <a href="{{url('/comment/'.$course->id.'/create')}}">Laisser un commentaire</a>
     </div>
 </div>
 

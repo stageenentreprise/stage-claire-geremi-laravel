@@ -133,7 +133,7 @@ class CourseController extends Controller
     public function frontViewCourse($slug, $chapterid) {
         try {
             // $course = Course::findOrFail($id);
-            // $course = Course::where('slug', $slug)->first();
+            $course = Course::where('slug', $slug)->first();
             $chapter = Chapter::findOrFail($chapterid);
         } catch (\Exception $e) {
             return "Formation introuvable";
@@ -141,7 +141,7 @@ class CourseController extends Controller
         return view("user.view-front")
         ->withCourse($chapter->part->course)
         ->withChapter($chapter)
-        // ->withCourse($course)
+        ->withCourse($course)
         // ->withPartNumero($partnumero)
         // ->withChapterNumero($chapternumero)
         ;
