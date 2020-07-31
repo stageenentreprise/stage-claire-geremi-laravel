@@ -59,8 +59,7 @@ class CourseController extends Controller
             }
         } while($exist != null); 
         Course::create($data);
-        return "Vous avez créé une formation ! <br> Nom : " . $data['title']
-        ;
+        return redirect(url('courses'));
     }
 
     public function view($id) {

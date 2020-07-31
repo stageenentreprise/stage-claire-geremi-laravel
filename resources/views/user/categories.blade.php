@@ -40,7 +40,7 @@ use App\Category;
             <h3 class="card-title">{{$course->title}}</h3><br>
             <h4 class="card-subtitle mb-2 text-muted">Description : </h4>
             <h5>{{$course->description}}</h5><br>
-            <a href="{{url('/formation/'.$course->slug)}}">Accéder à la formation</a>
+            <a href="{{url('/formationpreview/'.$course->slug)}}">Accéder à la formation</a>
         </div>
     </div>        
     @endforeach

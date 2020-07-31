@@ -17,7 +17,7 @@
 @foreach ($course->parts as $part)
     @foreach ($part->chapters as $chapter)
         @if ($countChapter === 0)
-            <a href="{{url('/formation/'.$course->slug.$chapter->id )}}">Débuter la formation</a>
+            <a href="{{url('/formation/'.$course->slug.'/'.$chapter->id )}}">Débuter la formation</a>
         @endif
         
     @endforeach
