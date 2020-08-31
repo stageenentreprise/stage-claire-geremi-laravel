@@ -45,13 +45,12 @@
 
 <script src='https://cdn.tiny.cloud/1/qc0l6ipo1j5u0g0thhy9w698h5eb1roomralrmjcfnzup6tr/tinymce/5/tinymce.min.js' referrerpolicy="origin">
 
-  </script>
-
-  <script>
-    tinymce.init({
-      selector: '#mce'
-    });
-
 </script>
+
+    <script>
+    tinymce.init({
+        selector: '#mce'
+    });
+    </script>
 
 @endsection

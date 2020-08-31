@@ -7,6 +7,7 @@ use App\Course;
 use App\Http\Requests\CategoryRequest;
 use CreateCategoriesTable;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 class CategoryController extends Controller
 {
@@ -28,6 +29,10 @@ class CategoryController extends Controller
        // dd($request->all());
        $data=$request->all(); 
        $suffixe = "";
+       if ($request->hasFile('photo')) {
+        $data['photo'] = true;
+        }
+       $data['user_id'] = Auth::user()->id;
         do{
             $data['slug']=Str::slug($data['name'],'-') . ($suffixe == '' ? "" : "-") . $suffixe; 
             $exist = Category::where('slug', $data['slug'])->first();
@@ -39,19 +44,35 @@ class CategoryController extends Controller
                 }
             }
         } while($exist != null); 
-        if ($request->hasFile('photo')) {
-            $data['photo'] = true;
-        }
+        
         $category=Category::create($data);
-        if ($request->hasFile('video')) {
+        if ($request->hasFile('photo')) {
             $photo = $request->file('photo');
-            $name = $category->id.".png";
-            $destinationPath = url('/images/categories');
+            $name = $category->slug.".png";
+            $destinationPath = storage_path('/images/categories');
             $photo->move($destinationPath, $name);
         }
        
         return redirect(url('category/create'));
     }
+
+    public function image($id) {
+        try {
+            $category = Category::findOrFail($id);
+            
+        } catch (\Exception $e) {
+            return 'Catégorie non trouvée';
+        }
+
+        if ($category->photo) {
+            $destinationPath = storage_path('/images/categories');
+            $file = $destinationPath . '/' . $category->slug . '.png';
+            return response()->download($file);
+        }else {
+            return 'Cette vidéo n\'existe pas';
+        }
+    }
+
     public function categories()
     {
         $categories = Category::whereNull("category_id")->orderBy('name')->get();

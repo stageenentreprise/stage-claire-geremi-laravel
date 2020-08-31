@@ -23,19 +23,17 @@ class CourseController extends Controller
     {
         // parent::__construct();
         $this->middleware('auth',['except' => ['checkLogin']]);
-        $this->middleware('admin',['except' => ['frontView', 'frontViewCourse']]);
+        $this->middleware('admin',['except' => ['frontView', 'frontViewCourse', 'frontPreviewCourse']]);
         $this->middleware('categories.share');
     }
 
     public function create() {
-        $tier = 0; //idée : afficher le tier d'une catégorie
         $separateur = "";
         $title = "Create a course";
         $categories = Category::whereNull("category_id")->orderBy('name')->get();
         return view('course/createCourse')
         ->withTitle($title)
         ->withCategories($categories)
-        ->withTier($tier)
         ->withSeparateur($separateur)
         ;
     }
@@ -139,7 +137,6 @@ class CourseController extends Controller
             return "Formation introuvable";
         }
         return view("user.view-front")
-        ->withCourse($chapter->part->course)
         ->withChapter($chapter)
         ->withCourse($course)
         // ->withPartNumero($partnumero)

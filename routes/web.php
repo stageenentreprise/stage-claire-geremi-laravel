@@ -32,6 +32,7 @@ Route::get('/categories/liste', 'CategoryController@frontViewList')->name('view_
 Route::get('/formations', 'CourseController@frontView')->name('view_front_courses');
 Route::get('/formation/{slug}/{chapterid}', 'CourseController@frontViewCourse')->name('view_front_course');
 Route::get('/formationpreview/{slug}', 'CourseController@frontPreviewCourse')->name('preview_front_course');
+Route::get('/images/categories/{id}', 'CategoryController@image')->name('image');
 
 Route::get('/dashboard', 'DashboardController@index')->name('view_dashboard');
 

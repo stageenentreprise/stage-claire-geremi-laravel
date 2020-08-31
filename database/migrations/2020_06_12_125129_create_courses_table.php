@@ -18,6 +18,7 @@ class CreateCoursesTable extends Migration
             $table->dateTime('created');
             $table->dateTime('updated');
             $table->string('title');
+            $table->boolean('photo')->default(false);
             $table->biginteger('user_id')->unsigned();
             $table->foreign('user_id')
                 ->references('id')

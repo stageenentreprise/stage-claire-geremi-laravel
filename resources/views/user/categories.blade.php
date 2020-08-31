@@ -31,7 +31,7 @@ use App\Category;
         {{$item}}
     @endforeach --}}
 
-<img class="mx-auto d-block" src="{{url('/images/categories/'.$currentCategory2->slug.'.png')}}">
+<img class="mx-auto d-block" src="{{url('/images/categories/'.$currentCategory2->id )}}">
 
 <br><br><h2 class="text-center">Liste des formations relatives à la catégorie {{$currentCategory2->name}}</h2>
 

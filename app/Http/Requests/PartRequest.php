@@ -33,10 +33,10 @@ class PartRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'veuillez saisir le titre.',
-            'name.max' => 'Le titre doit composer entre 6 et 128 caractères',
-            'name.min' => 'Le titre doit composer entre 6 et 128 caractères',
-            'id.required' => 'Veuillez spécifier le numéro de la partie.',
+            'title.required' => 'veuillez saisir le titre.',
+            'title.max' => 'Le titre doit composer entre 6 et 128 caractères',
+            'title.min' => 'Le titre doit composer entre 6 et 128 caractères',
+            'numero.required' => 'Veuillez spécifier le numéro de la partie.',
             'description.required' => 'Veuillez saisir un texte.',
         ];
     }

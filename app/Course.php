@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Course extends Model
 {
     protected $fillable = [
-        'created', 'updated', 'title', 'user_id','description', 'category_id', 'slug'
+        'created', 'updated', 'title', 'user_id','description', 'category_id', 'slug', 'photo'
     ]; 
     public $timestamps = false;
 

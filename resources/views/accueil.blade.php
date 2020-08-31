@@ -8,7 +8,7 @@
 @section('content')
 
 
-  <header class="masthead text-center text-white">
+  <div class="masthead text-center text-white">
     <div class="masthead-content">
       <div class="container">
         <h1 class="masthead-heading mb-0">FORMACITRON</h1>
@@ -20,7 +20,7 @@
     <div class="bg-circle-2 bg-circle"></div>
     <div class="bg-circle-3 bg-circle"></div>
     <div class="bg-circle-4 bg-circle"></div>
-  </header>
+  </div>
 
   <section>
     <div class="container">

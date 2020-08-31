@@ -4,7 +4,7 @@
 @section('content')
     
 <h1 class="text-center">Formations</h1>    
-<a class="btn btn-primary btn-lg active btn-block" role="button" aria-pressed="true" href="{{url('/stage/stage-claire-geremi-laravel/public/course/create')}}">Ajouter une formation</a> <br>
+<a class="btn btn-primary btn-lg active btn-block" role="button" aria-pressed="true" href="{{url('/course/create')}}">Ajouter une formation</a> <br>
 @foreach ($courses as $course)
 
     <div class="card text-center float-left" style="width: 18rem;">

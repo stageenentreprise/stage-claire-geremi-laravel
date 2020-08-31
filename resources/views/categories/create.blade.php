@@ -4,7 +4,7 @@
 @section('content')
 
 
-<form method="POST" action="{{url('category/insert')}}">
+<form method="POST" action="{{url('category/insert')}}" enctype="multipart/form-data">
   @csrf
   <div class="container float-left">
     <div class="row">
