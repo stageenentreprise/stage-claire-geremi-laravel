@@ -12,7 +12,7 @@
 @foreach ($course->parts as $part)
     <button> Partie {{$part->numero}} : {{$part->title}} <br> </button>
     @foreach ($part->chapters as $chapter)
-    <a href="{{url('/formation/slapslap/'.$chapter->id )}}"> Chapitre {{$chapter->numero}} : {{$chapter->title}} </a> <br> 
+    <a href="{{url('/formation/'.$course->slug.'/'.$chapter->id )}}"> Chapitre {{$chapter->numero}} : {{$chapter->title}} </a> <br> 
     @endforeach
     <br>
 @endforeach
